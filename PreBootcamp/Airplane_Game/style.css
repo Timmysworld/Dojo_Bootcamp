@@ -1,0 +1,24 @@
+#space{
+    background-image: url("/PreBootcamp/Airplane_Game/images/space.png");
+    width: 900px;
+    height: 900px;
+}
+
+.player{
+    position: absolute;
+    width: 70px;
+    height: 75px;
+    background-image: url("/PreBootcamp/Airplane_Game/images/player.png");
+}
+.enemy{
+    position: absolute;
+    width: 70px;
+    height: 75px;
+    background-image: url("/PreBootcamp/Airplane_Game/images/enemy.png");
+}
+#missiles{
+    position: absolute;
+    background-color: green;
+    width: 2px;
+    height: 10px;
+}

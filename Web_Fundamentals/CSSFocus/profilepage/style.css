@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar  */
+.navbar{
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+}
+.navlogo{
+    color: white;
+}
+ul{
+    list-style: none;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    margin-left: 285px;
+}
+.nav-links li a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+.container{
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 1000px; 
+}
+.sub-content1, .sub-content2{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+/* Profile Card */
+.profile-card{
+    margin: 10px 0 15px 0; /*top, right,bottom,left*/
+    border:2px solid gray;
+    font-size: 1.2rem;
+}
+.card-header{
+    background-color: aqua;
+    height: 120px;
+    /* margin-bottom: 90px; */
+}
+.userpic{
+    background-color: white;
+    border-radius: 50%;
+    height: 190px;
+    padding: 5px;
+    margin: 20px 0 0 20px;
+}
+.card-body{
+    padding: 20px;
+    margin-top: 50px;
+}
+.card-body h1, .card-body h3,.card-body p {
+    margin: 20px 0px;
+}
+.icon-l, .icon-g{
+    height: 25px;
+}
+/* Education Block */
+.education{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+}
+.edu-header{
+    background-color: black;
+    color: White;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.edu-header h2{
+    margin-left: 10px;
+}
+.edu-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* margin-top: -85px; */
+}
+.edu-body h3, .edu-body p{
+    padding: 10px;
+}
+
+.sub-content2{
+    /* border:2px solid green; */
+    vertical-align: top;
+}
+/* Connection Request Block */
+.connection-request{
+    margin: 10px 0 10px 0; /*top, right,bottom,left*/
+    border: 2px solid gray;
+    width: 100%;
+}
+.connection-head{
+    background-color: black;
+    color: White;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+.number{
+    background-color: gray;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+}
+.connection-head h3{
+    margin-left: 5px;
+}
+.Todd, .phil{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    /* margin-top: -70px; */
+}
+.phil{
+    margin: 0;
+}
+.connect-body .pic{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.connect-body h4{
+    display: flex;
+    align-items: center;
+}
+.icon{
+    height: 50px;
+    width: 50px;
+}
+
+/* Your Friends list  Block */
+.friend-list{
+    border: 2px solid grey
+}
+.friend-header{
+    background-color: black;
+    color: White;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+.friendlist-body img{
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    margin-bottom: 5px;
+}
+.friendlist-body{
+    padding: 25px;
+    /* margin-top: -110px; */
+}
+.friendlist-body h4{
+    display: flex;
+    align-items: center;
+}
+span{
+    margin-left: 15px;
+}
+.viewmore{
+/*top, right,bottom,left*/
+    padding: 5px;
+    border: 2px solid grey;
+}
+.more-link{
+    margin-left: 25px;
+}

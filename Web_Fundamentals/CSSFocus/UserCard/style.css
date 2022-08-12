@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 1000px; 
+}
+.user-card{
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    overflow: hidden;
+}
+.header{
+    background-color: aqua;
+    height: 120px;
+    margin-bottom: 70px;
+}
+.card-body{
+    padding:20px;
+}
+.card-body h1, .card-body h2,.card-body h3,.card-body p {
+    margin: 20px 0px;
+}
+.icon{
+    border-radius: 50%;
+    background-color: #fff;
+    height: 190px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.gear{
+    height: 20px;
+}
+.location{
+    height: 25px;
+}

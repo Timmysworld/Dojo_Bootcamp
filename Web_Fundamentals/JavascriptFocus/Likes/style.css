@@ -1,0 +1,31 @@
+.box{
+    border: 2px solid black;
+    
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.likes{
+    display: flex;
+    justify-content: space-between;
+}
+.number{
+    margin-right: 10px;
+    font-weight: bold;
+}
+button{
+    border: 2px solid goldenrod;
+    width: 150px;
+    padding: 15px;
+    background-color: gold;
+    margin-left: 25px;
+    box-shadow: 2px 2px black;
+}
+.some-text p{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}

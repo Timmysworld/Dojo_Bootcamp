@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dojo Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="navbar">
+            <div class="navlogo">
+                <h1>Dojo Weather</h1>
+            </div>
+            <form action="#" class="searchbar">
+                <input type="text" name="search" id="" placeholder="search...">
+                <button type="submit">Search</button>
+            </form>
+            <ul>
+                <li><a href="#" onclick="loadWeather(this)" id="Burbank">Burbank</a></li>
+                <li><a href="#"onclick="loadWeather(this)" id="Chicago">Chicago</a></li>
+                <li><a href="#"onclick="loadWeather(this)" id="Dallas">Dallas</a></li>
+            </ul>
+        </div><!--End Navbar-->
+        <div class="main-container">
+            <div class="box-heading">
+                <h2>San Jose</h2>
+                <div class="degree-box">
+                    <label for="degrees">show temperature in</label>
+                    <select name="degrees" class="degrees">
+                        <option value="">C°</option>
+                        <option value="">F°</option>
+                    </select>
+                </div>
+            </div><!--End Box-heading-->
+            <hr>
+            <div class="box-weather">
+
+            </div><!--End Box-Weather-->
+            <div class="box-cookies">
+
+            </div><!--End Box-Cookies-->
+        </div><!--End Main-Container-->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

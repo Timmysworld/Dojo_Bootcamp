@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: darkgray;
+    margin: 0 65px 0 65px;/*top, right,bottom,left*/
+    padding: 15px;
+}
+.searchbar{
+    width: 50%;
+}
+.login{
+    padding: 5px;
+    width: 10%;
+    box-shadow: 5px 10px #888888;
+}
+h2{
+    font-size: 2rem;
+}
+.main-container{
+    display: flex;
+    margin-top: 25px;
+}
+.container-one{
+    /* border: 2px solid black; */
+    margin: 0 auto;
+    margin-left: 165px;
+    padding: 25px;
+    width: 50%;
+}
+.container-two{
+    width: 25%;
+    margin-right: 175px;
+}
+.content-box{
+    display: flex;
+    margin-bottom: 25px;
+    border: 2px solid black;
+}
+.content-info{
+    width: 75%;
+}
+.content-info h2{
+    margin: 10px 0 0 10px;
+}
+.content-info p{
+    padding: 10px;
+}
+
+.text-definition{
+    display: flex;
+    align-items: center;
+}
+.text-definition p{
+    font-size: 1.5rem;
+}
+.content-box2{
+    display: flex;
+    border: 2px solid black;
+
+}
+.content-box3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    margin-right: 65px;
+    margin-top: 25px;
+}
+.content-box3 h2{
+    padding: 15px;
+}
+.btn-definition{
+    background-color: green;
+    box-shadow: 5px 2px #888888;
+    color: white;
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.btn{
+    background-color: gold;
+    box-shadow: 5px 2px gray;
+    padding: 5px;
+    margin: 0 0 10px 5px;
+    /*top, right,bottom,left*/
+}
