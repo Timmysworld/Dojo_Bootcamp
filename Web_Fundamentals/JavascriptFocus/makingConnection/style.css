@@ -62,7 +62,7 @@ ul{
     padding: 20px;
     margin-top: 50px;
 }
-.card-body h1, .card-body h3,.card-body p {
+.card-body h2, .card-body h3,.card-body p {
     margin: 20px 0px;
 }
 .icon-l, .icon-g{
@@ -122,7 +122,7 @@ ul{
 .connection-head h3{
     margin-left: 5px;
 }
-.Todd, .phil{
+.todd, .phil{
     display: flex;
     justify-content: space-between;
     padding: 8px;

@@ -25,10 +25,10 @@
                 <div class="profile-card">
                     <div class="card-header"><img class="userpic" src="icons/user-circle.png" alt=""></div>
                     <div class="card-body">
-                        <h1>Jane Doe</h1>
+                        <h2>Jane Doe</h2>
                         <h3><img class="icon-l" src="icons/map-marker.png" alt="location "> Seattle</h3>
                         <p>Developer | Engineer | Problem Solver | Master of Shadows and the Internet!</p>
-                        <p><img class="icon-g" src="icons/gear.png" alt=""> <a href="#">edit profile</a></p>
+                        <p><img class="icon-g" src="icons/gear.png" alt=""> <a href="#" onclick="changeName(this)">edit profile</a></p>
                     </div>
                 </div>
                 <div class="education">
@@ -49,18 +49,18 @@
                         <h3>Connection Request</h3>
                     </div>
                     <div class="connect-body">
-                        <div class="Todd">
+                        <div class="todd" id="connection">
                             <h4><img class="pic" src="images/todd-s.jpg" alt=""><span>Todd E</span></h4>
                             <div>
-                                <img class="icon" src="icons/accept-circle.png" alt="">
-                                <img class="icon" src="icons/close-circle.png" alt="">
+                                <img class="icon" id="todd" onclick="accept(this)"src="icons/accept-circle.png" alt="">
+                                <img class="icon" id="todd" onclick="reject(this)" src="icons/close-circle.png" alt="">
                             </div>
                         </div>
-                        <div class="phil">
+                        <div class="phil" id="connection">
                             <h4><img class="pic" src="images/phil-s.jpg" alt=""><span>Phil S</span></h4>
                             <div>
-                                <img class="icon" src="icons/accept-circle.png" alt="">
-                                <img class="icon" src="icons/close-circle.png" alt="">
+                                <img class="icon" id="phil" onclick="accept(this)"src="icons/accept-circle.png" alt="">
+                                <img class="icon" id="phil" onclick="reject(this)"src="icons/close-circle.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -81,6 +81,7 @@
             </div> <!--End Sub-Content2-->
         </div> <!--End Container-->
     </div> <!--End Wrapper-->
+    <script src="script.js"></script>
 </body>
 </html>
 
