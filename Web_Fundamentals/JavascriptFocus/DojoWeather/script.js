@@ -26,32 +26,3 @@ function convert_temperature(element) {
     //when you want to read it - goes on the left 
     //when you want to replace it - goes on the right 
 
-
-
-
-
-
-
-// function cToF(celsius) {
-//     var cTemp = celsius;
-//     var cToFahr = cTemp * 9 / 5 + 32;
-// }
-// function fToC(fahrenheit) {
-//     var fTemp = fahrenheit;
-//     var fToCel = (fTemp - 32) * 5 / 9;
-// }
-
-// function temperatureConverter(valNum) {
-//     valNum = parseFloat(valNum);
-//     document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
-//   }
-// function chooseTempScale(valNum){
-//     valNum = parseFloat(valNum);
-//     document.querySelector(".temperature" + h3).innerHTML = (valNum-32) / 1.8;
-// }
-
-
-
-
-    // var tempScale = document.querySelectorAll(".temperature");
-    // tempScale.innerHTML = element.value;
