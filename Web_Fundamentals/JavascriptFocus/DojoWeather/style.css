@@ -13,6 +13,9 @@ h1, h2{
 h2{
     font-size: 2.2rem;
 }
+h3{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .navbar{
     display: flex;
@@ -39,11 +42,32 @@ li a{
     text-decoration: none;
     color: white;
 }
+input{
+    padding: 4px 10px;
+    border: 0;
+    box-shadow: 2px 2px gray;
+    border-radius: 20px;
+    font-size: 16px;
+    width: 350px;
+}
+.searchbar{
+    display: flex;
+    justify-content: center;
+}
+/* .btn-search{
+    background: none;
+    border: none;
+} */
+
+
 /* Box-Heading */
 .box-heading{
     display: flex;
     justify-content: space-around;
     margin: 15px 0;
+}
+.navlogo{
+    text-shadow: 2px 1px gray;
 }
 
 .degree-box{
@@ -54,3 +78,76 @@ li a{
 hr{
     margin: 0 75px;
 }
+/* Box-Weather Styling */
+.box-weather{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.day{
+    background-color:lightgray;
+    width: 250px;
+    height: 400px;
+    margin: 0 55px;
+}
+.day h3 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.day p{
+    font-size: 1.2rem;
+}
+p{
+    text-align: center;
+}
+.day img{
+    display: flex;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 50px;
+    padding: 20px;
+}
+.temperature{
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 40px;
+}
+.red{
+    color: red;
+}
+.blue{
+    color: blue;
+}
+
+/* BOx-Cookies Styling */
+.box-cookies{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cookie-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    width: 55%;
+}
+div img{
+    width: 100px;
+    padding: 10px;
+}
+.cookie-text h4{
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+.btn-cookie button{
+    background-color: blue;
+    color: white;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    width: 65px;
+    margin-right: 20px;
+    padding: 5px;
+}
+

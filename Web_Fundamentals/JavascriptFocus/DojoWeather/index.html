@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Dojo Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500&family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="wrapper">
@@ -17,8 +20,8 @@
                 <h1>Dojo Weather</h1>
             </div>
             <form action="#" class="searchbar">
-                <input type="text" name="search" id="" placeholder="search...">
-                <button type="submit">Search</button>
+                <input class="search" type="text" name="search" id="" placeholder="search city or zip">
+                <!-- <button class="btn-search" type="submit"><i class="fa fa-search"></i></button> -->
             </form>
             <ul>
                 <li><a href="#" onclick="loadWeather(this)" id="Burbank">Burbank</a></li>
@@ -31,18 +34,65 @@
                 <h2>San Jose</h2>
                 <div class="degree-box">
                     <label for="degrees">show temperature in</label>
-                    <select name="degrees" class="degrees">
-                        <option value="">C°</option>
-                        <option value="">F°</option>
+                    <select name="degrees" class="degrees" onchange="convert_temperature(this)">
+                        <option value="celsius">C°</option>
+                        <option value="fahrenheit">F°</option>
                     </select>
                 </div>
             </div><!--End Box-heading-->
             <hr>
             <div class="box-weather">
+                <div class="day">
+                    <h3>Today</h3>
+                    <img src="/Web_Fundamentals/JavascriptFocus/DojoWeather/icons/cloud.png" alt=""><a hidden href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by iconixar - Flaticon</a>
+                    <p>cloudy</p>
+                    <div class="temperature">
+                        <h3 class="red">24&deg;</h3>
+                        <h3 class="blue">18&deg;</h3>
+                    </div>
+                </div>
+                <div class="day">
+                    <h3>Tomorrow</h3>
+                    <img src="/Web_Fundamentals/JavascriptFocus/DojoWeather/icons/sunny.png" alt=""><a hidden href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>
+                    <p>Sunny</p>
+                    <div class="temperature">
+                        <h3 class="red">27&deg;</h3>
+                        <h3 class="blue">19&deg;</h3>
+                    </div>
+                </div>
+                <div class="day">
+                    <h3>Friday</h3>
+                    <img src="/Web_Fundamentals/JavascriptFocus/DojoWeather/icons/cloudy.png" alt=""><a hidden href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by iconixar - Flaticon</a>
+                    <p>some rain</p>
+                    <div class="temperature">
+                        <h3 class="red">21&deg;</h3>
+                        <h3 class="blue">16&deg;</h3>
+                    </div>
+                </div>
+                <div class="day">
+                    <h3>Saturday</h3>
+                    <img src="/Web_Fundamentals/JavascriptFocus/DojoWeather/icons/sunny.png" alt=""><a hidden href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>
+                    <p>sunny</p>
+                    <div class="temperature">
+                        <h3 class="red">26&deg;</h3>
+                        <h3 class="blue">21&deg;</h3>
+                    </div>
+                </div>
 
             </div><!--End Box-Weather-->
             <div class="box-cookies">
-
+                <div class="cookie-content">
+                    <div> <img src="/Web_Fundamentals/JavascriptFocus/DojoWeather/icons/icons8-cookie-50.png" alt="">
+                    </div>
+                    <div class="cookie-text">
+                        <h4>Stop! Cookie Time</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing.<a href="#">read more...</a></p>
+                    </div>
+                    
+                    <div class="btn-cookie">
+                        <button onclick="acceptance()">I Accept</button>
+                    </div>
+                </div>
             </div><!--End Box-Cookies-->
         </div><!--End Main-Container-->
     </div>

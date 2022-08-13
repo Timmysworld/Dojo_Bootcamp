@@ -2,12 +2,12 @@
 function changeName(element){
     var name = document.querySelector("h2");
     name.innerHTML = "Timmy Doe";
-    console.log(name)
+    // console.log(name)
 }
 
 
 var number =[2, 500];
-console.log(number);
+// console.log(number);
 
 function accept(element){
     var listOfNumbers = document.querySelectorAll(".number");
