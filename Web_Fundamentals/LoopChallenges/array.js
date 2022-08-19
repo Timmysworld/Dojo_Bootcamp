@@ -72,12 +72,37 @@ console.log(result); // we expect back 4
 // 4. Array Reverse
 //Write a function that will reverse the values an array and return them.
 function reverse(arr) {
-    // your code here
+    // your code here 
+    //1ST APPROACH:
+    var newArr = [];
+    for (var i = arr.length-1; i >=0; i-- ){
+        console.log(arr[i]);
+        newArr.push(arr[i]);
+    }
     
     
-    return arr;
+    return newArr;
 }
 
+var result = reverse(["a", "b", "c", "d", "e"]);
+console.log(result); // we expect back ["e", "d", "c", "b", "a"]
+
+//NOTES: 
+//WRITES A FUNCTION THAT TAKES IN AN ARRAY
+//CREATE AN EMPTY ARRAY IN THE FUNCTION
+//LOOP THROUGH THE ORIGINAL ARRAY starting at end working backwards
+//ADD VALUES IN REVERSE ORDER TO M NEW ARRAY
+
+// 2ND APPROACH: SWAP IN PLACE
+function reverse(arr){
+    for ( var i = 0; i < Math.floor(arr.length / 2); i++){
+        var temp = arr[i];
+        arr[i] = arr[arr.length-1-i];
+        arr[arr.length-1-i]= temp;
+        
+        }
+    return arr;
+}
 var result = reverse(["a", "b", "c", "d", "e"]);
 console.log(result); // we expect back ["e", "d", "c", "b", "a"]
 
@@ -88,6 +113,9 @@ function fibonacciArray(n) {
     // the [0, 1] are the starting values of the array to calculate the rest from
     var fibArr = [0, 1];
     // your code here
+    for(var i=fibArr.length; i<10; i++) {
+        fibArr[i] = fibArr[i-2] + fibArr[i-1];
+    }
     return fibArr;
 }
 
