@@ -44,7 +44,6 @@ basicColors();
 // printMaxOfArray(arr)
 // Given an array, find and print its largest element.
 
-
 function printMaxOfArray(arr){
     var max = arr[0];
     for(let i=1; i <arr.length; i++){
@@ -63,15 +62,56 @@ console.log(output);
 // printAverageOfArray(arr)
 // Analyze an array’s values and print the average.
 
+function printAverageOfArray(arr){
+    let sum = 0; 
+    for(let number of arr){
+        sum +=number;
+    }
+    average = sum/arr.length;
+}
+var result = printAverageOfArray([11,325,45,95,150]);
+console.log(average);
+
+
 // 7. ARRAY WITH ODDS
 // returnOddsArray1To255()
 // Create an array with all the odd integers between 1
 // and 255 (inclusive)
 
+let oddNum = [];
+function returnOddsArray1To255(){
+    for (let i = 1; i<=255; i+=2){
+        // console.log(i);
+        oddNum.push(i);
+        // console.log(oddNum);
+    }
+    return oddNum;
+}
+returnOddsArray1To255();
+
 // 8. SQUARE THE VALUES
 // squareArrayVals(arr)
 // Square each value in a given array, returning that
 // same array with changed values.
+
+let arr = [1,2,4,6,8];
+// let arr2 = [2,4,6,8];
+function squareArrayVals(myArr){
+    for(let i =0; i<myArr.length; i++){
+        // console.log(myArr);
+        myArr[i]= Math.pow(myArr[i],2);
+    }
+    // console.log(myArr);
+    return myArr;
+    
+}
+// squareArrayVals(arr);
+console.log(squareArrayVals(arr));
+//NOTES:
+//Math.pow(x,y)
+//DYNAMICALLY DUE TO CREATING A PARAMETER.
+//myArr IS JUST A PLACE HOLDER THAT ACCESSES THE arr ARRAY.
+
 
 // 9. GREATER THAN Y
 // printArrayCountGreaterThanY(arr, y)
@@ -79,12 +119,13 @@ console.log(output);
 // number of array values greater than Y.
 
 
+
 // 10. ZERO OUT NEGATIVE NUMBERS
 // zeroOutArrayNegativeVals(arr)
 // Return the given array, after setting any negative
 // values to zero.
 
-let Numbers = []
+let Numbers = [];
 
 function zeroOutArrayNegativeVals(arr){
     for(let i =0; i<arr.length; i++){
@@ -103,9 +144,9 @@ function zeroOutArrayNegativeVals(arr){
 let max, min, average;
 
 function printMaxMinAverageArrayVals(arr){
-    max = arr[0]
-    min = arr[0]
-    average = 0
+    max = arr[0];
+    min = arr[0];
+    average = 0;
 
     for ( let i =0; i<arr.length; i++){
         max = arr[0]
@@ -119,7 +160,7 @@ function printMaxMinAverageArrayVals(arr){
     }
         average = average/arr.length;
 }
-printMaxMinAverageArrayVals([2,7,6,1,4,9])
+printMaxMinAverageArrayVals([2,7,6,1,4,9]);
 
 // 12 SHIFT ARRAY VALUES
 // shiftArrayValsLeft(arr)
@@ -127,7 +168,7 @@ printMaxMinAverageArrayVals([2,7,6,1,4,9])
 // by one index, dropping the first value and leaving a 0
 // (zero) value at the end of the array.
 
-var arr = [1,2,3,4,5]
+var arr = [1,2,3,4,5];
 //expected result
 //[2,3,4,5,0]
 function shiftArrayValsLeft(arr){
