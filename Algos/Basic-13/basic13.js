@@ -56,7 +56,7 @@ function printMaxOfArray(arr){
 }
 var array = [11, 325, 45, 95, 9808];
 var output = printMaxOfArray(array);
-console.log(max);
+console.log(output);
 
 
 // 6. GET AND PRINT THE AVERAGE
