@@ -1,46 +1,85 @@
-// 1. Print 1-255
+// 1. PRINT 1-255
 // print1To255()
 // Print all the integers from 1 to 255.
 
+for(let i = 1; i<=255; i++){
+    console.log(i);
+}
 
-// 2. Print Odds 1-255
+
+// 2. PRINT ODDS 1-255
 // printOdds1To255()
 // Print all odd integers from 1 to 255.
 
-// 3. Print Ints and Sum 0-255
+for (let i = 1; i<=255; i+=2){
+    console.log(i);
+}
+
+// 3. PRINT INTEGERS AND SUM OF 0-255
 // printIntsAndSum0To255()
 // Print integers from 0 to 255, and with each integer
 // print the sum so far.
 
-// 4. Iterate and Print Array
-// printArrayVals(arr)
+function printIntsAndSum0To255(){
+    let sum = 0;
+    for (let num=0; num<=255; num++){
+        sum +=num;
+        console.log(num);
+    }
+}
+printIntsAndSum0To255();
+
+// 4. ITERATE AND PRINT THE ARRAY
 // Iterate through a given array, printing each value.
 
-// 5. Find and Print Max
+let colors = ["Red", "Blue", "Green", "Black"]
+function basicColors(){
+    for(let i = 0; i<colors.length; i++){
+        console.log(colors[i]);
+    }
+}
+basicColors();
+
+// 5. FIND AND PRINT THE MAX
 // printMaxOfArray(arr)
 // Given an array, find and print its largest element.
 
-// 6. Get and Print Average
+
+function printMaxOfArray(arr){
+    var max = arr[0];
+    for(let i=1; i <arr.length; i++){
+        if (max < arr[i]){
+            max = arr[i];
+        }
+    }
+    return max;
+}
+var array = [11, 325, 45, 95, 9808];
+var output = printMaxOfArray(array);
+console.log(max);
+
+
+// 6. GET AND PRINT THE AVERAGE
 // printAverageOfArray(arr)
 // Analyze an array’s values and print the average.
 
-// 7. Array with Odds
+// 7. ARRAY WITH ODDS
 // returnOddsArray1To255()
 // Create an array with all the odd integers between 1
 // and 255 (inclusive)
 
-// 8. Square the Values
+// 8. SQUARE THE VALUES
 // squareArrayVals(arr)
 // Square each value in a given array, returning that
 // same array with changed values.
 
-// 9. Greater than Y
+// 9. GREATER THAN Y
 // printArrayCountGreaterThanY(arr, y)
 // Given an array and a value Y, count and print the
 // number of array values greater than Y.
 
 
-// 10. Zero Out Negative Numbers
+// 10. ZERO OUT NEGATIVE NUMBERS
 // zeroOutArrayNegativeVals(arr)
 // Return the given array, after setting any negative
 // values to zero.
@@ -56,7 +95,7 @@ function zeroOutArrayNegativeVals(arr){
         return arr;
 }
 
-// 11. Max, Min, Average
+// 11. MAX, MIN, AVERAGE
 // printMaxMinAverageArrayVals(arr)
 // Given an array, print the max, min and average
 // values for that array.
@@ -82,7 +121,7 @@ function printMaxMinAverageArrayVals(arr){
 }
 printMaxMinAverageArrayVals([2,7,6,1,4,9])
 
-// 12. Shift Array Values
+// 12 SHIFT ARRAY VALUES
 // shiftArrayValsLeft(arr)
 // Given an array, move all values forward (to the left)
 // by one index, dropping the first value and leaving a 0
@@ -98,3 +137,8 @@ function shiftArrayValsLeft(arr){
     arr[arr.length-1]=0;
     return arr;
 }
+
+// 13. SWAP STRING FOR ARRAY NEGATIVE VALUES
+// swapStringForArrayNegativeVals(arr)
+// Given an array of numbers, replace any negative
+// values with the string 'Dojo'.
