@@ -96,8 +96,6 @@ iterateDictionary2("last_name", students)
 # Minh
 # Devon
 
-
-
 dojo = {
 'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
 'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
@@ -112,6 +110,14 @@ def printInfo(some_dict):
     for instructor in dojo['instructors']:
         print(instructor)
 printInfo(dojo)
+
+#2nd Approach:
+def print_info(dict):
+    for key,val in dict.items():
+        print("--------------")
+        print(f"{len(val)} {key.upper()}")
+        for i in range(0, len(val)):
+            print(val[i])
 
 
 
