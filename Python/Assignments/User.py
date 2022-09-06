@@ -58,15 +58,8 @@ class User:
 
 Anonymous_User = User("John","Doe","John.D@hotmail.com",32,False,0)
 Anonymous_User2 = User("Tiffany","New","T.New@gmail.com",27,False,0)
-Anonymous_User.display_info()
-Anonymous_User.enroll()
-Anonymous_User.display_info()
-Anonymous_User.spend_points(200)
-Anonymous_User.display_info()
-Anonymous_User2.display_info()
-Anonymous_User2.enroll()
-Anonymous_User2.display_info()
-Anonymous_User2.spend_points(200)
-Anonymous_User2.display_info()
+Anonymous_User.display_info().enroll().display_info().spend_points(200).display_info()
+Anonymous_User2.display_info().enroll().display_info().spend_points(200).display_info()
+
 
 # Update Code Logic for if user is a member but have no points 
