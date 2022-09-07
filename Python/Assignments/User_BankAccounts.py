@@ -3,18 +3,22 @@ class User:
     def __init__(self,name, email):
         self.name = name
         self.email = email
-        self.account = BankAccount(int_rate=0.2, balance = 0)
+        self.account = { # when creating a user it automatically creates an instances of bank account
+            'Checking': BankAccount(int_rate=0.2, balance = 0), 
+            'Savings': BankAccount(int_rate=0.2, balance = 0)
+            }
 
-    def deposit(self):
-        self.account.deposit(100)
+    def display_account_info(self):
+        print(f"User: {self.name}")
+        print(f"Checking: {self.account['Checking'].balance}")
+        print(f"Savings: {self.account['Savings'].balance}")
 
-    def make_withdraw(self):
-        self.account.withdraw(50)
+    def make_deposit(self,amount):
+        self.account.deposit(amount)
+
+    def make_withdraw(self,amount):
+        self.account.withdraw(amount)
     
-    def display_balance(self):
-        self.account.balance
-
-
 class BankAccount:
     # new class attribute - a list of all the accounts!
     all_accounts = []
@@ -64,6 +68,12 @@ class BankAccount:
         for account in cls.all_accounts:
             sum += account.balance
         return sum
+
+user1 = User("Timothy", "t.singleton89@hotmail.com")
+user1.display_account_info()
+user1.make_deposit(50)
+# print(AccountOne.name)
+# print(AccountOne.account.balance)
 
 # checking = BankAccount(0.10, 500.00)
 # checking.display_account_info().withdraw(100.00).yield_interest()
