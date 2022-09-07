@@ -59,5 +59,4 @@ print(f"Total Cash: ${BankAccount.total_accounts()}")
 # x = BankAccount.total_accounts()
 # print(x)
 
-# QUESTIONS TO ASK:
-# want to figure out how to show the amount withdrawn in print statement 
+
