@@ -24,8 +24,12 @@ class User:
         self.account[account_name].withdraw(amount,account_name)
         return self
     
-    def transfer_money(self, amount, other_user):
-        return self
+    def transfer_money(self,account_name, amount, other_user, to_account):
+            self.account[account_name].withdraw(amount,account_name)  
+            other_user.account[to_account].deposit(amount)
+            print(f"You've transfer ${amount} to {other_user.name}'s {to_account}")
+            return self
+
     
 class BankAccount:
     # new class attribute - a list of all the accounts!
@@ -79,8 +83,15 @@ class BankAccount:
         return sum
 
 user1 = User("Timothy", "t.singleton89@hotmail.com")
-user1.display_account_info().make_deposit(100.00, "Checking").make_deposit(150.00, "Savings").make_withdraw(25.00, "Checking").display_account_info()
+# user1.display_account_info().make_deposit(100.00, "Checking").make_deposit(150.00, "Savings").make_withdraw(25.00, "Checking").display_account_info()
 user2 =User("John","John.Doe@email.com")
+
+user2.display_account_info().make_deposit(100.00, "Checking").display_account_info().make_withdraw(25.00,"Checking").transfer_money("Checking", 25.00, user1, "Savings").display_account_info()
+user1.display_account_info()
+# user1.display_account_info()
+# user2.display_account_info()
+# account_name, amount, other_user, to_account
+
 
 
 # checking = BankAccount(0.10, 500.00)
@@ -91,3 +102,17 @@ user2 =User("John","John.Doe@email.com")
 
 # calling the Method total_accounts (class.method)
 # print(f"Total Cash: ${BankAccount.total_accounts()}")
+
+
+
+#Update the User class __init__ method
+
+# Add a make_deposit method to the User class that calls on it's bank account's instance methods.
+
+# Add a make_withdrawal method to the User class that calls on it's bank account's instance methods.
+
+# Add a display_user_balance method to the User class that displays user's account balance
+
+# SENSEI BONUS: Allow a user to have multiple accounts; update methods so the user has to specify which account they are withdrawing or depositing to
+
+# SENPAI BONUS: Add a transfer_money(self, amount, other_user) method to the user class that takes an amount and a different User instance, and transfers money from the user's account into another user's account.
