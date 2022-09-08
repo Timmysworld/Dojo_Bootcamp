@@ -9,15 +9,23 @@ class User:
             }
 
     def display_account_info(self):
+        print(f"===========================================")
         print(f"User: {self.name}")
-        print(f"Checking: {self.account['Checking'].balance}")
-        print(f"Savings: {self.account['Savings'].balance}")
+        print(f"Checking: ${self.account['Checking'].balance}")
+        print(f"Savings: ${self.account['Savings'].balance}")
+        print(f"===========================================")
+        return self
 
-    def make_deposit(self,amount):
-        self.account.deposit(amount)
+    def make_deposit(self,amount,account_name):
+        self.account[account_name].deposit(amount)
+        return self
 
-    def make_withdraw(self,amount):
-        self.account.withdraw(amount)
+    def make_withdraw(self,amount,account_name):
+        self.account[account_name].withdraw(amount,account_name)
+        return self
+    
+    def transfer_money(self, amount, other_user):
+        return self
     
 class BankAccount:
     # new class attribute - a list of all the accounts!
@@ -37,10 +45,10 @@ class BankAccount:
         print(f"Account Balance: ${self.balance}")
         return self
 
-    def withdraw(self, amount):
+    def withdraw(self, amount,account_name):
         if BankAccount.can_withdraw(self.balance,amount): # with Static method all bank accounts can be checked for insufficient funds.
             self.balance -= amount
-            print(f"You've withdrawn: ${amount} ")
+            print(f"You've withdrawn: ${amount} from {account_name}")
         else: 
             print(f"Insufficient Funds ${self.balance}")
         return self
@@ -61,6 +69,7 @@ class BankAccount:
             return False
         else:
             return True
+    
 
     @classmethod 
     def total_accounts(cls):
@@ -70,10 +79,9 @@ class BankAccount:
         return sum
 
 user1 = User("Timothy", "t.singleton89@hotmail.com")
-user1.display_account_info()
-user1.make_deposit(50)
-# print(AccountOne.name)
-# print(AccountOne.account.balance)
+user1.display_account_info().make_deposit(100.00, "Checking").make_deposit(150.00, "Savings").make_withdraw(25.00, "Checking").display_account_info()
+user2 =User("John","John.Doe@email.com")
+
 
 # checking = BankAccount(0.10, 500.00)
 # checking.display_account_info().withdraw(100.00).yield_interest()
