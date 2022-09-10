@@ -76,7 +76,7 @@ class BankAccount:
     
 
     @classmethod 
-    def total_accounts(cls):
+    def total_accounts(cls): #Looping through List already created 
         sum = 0
         for account in cls.all_accounts:
             sum += account.balance
