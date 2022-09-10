@@ -64,8 +64,6 @@ class Player:
         print(f"=========================================")
         return self
     
-    
-
     @classmethod
     def draft_pick(cls, data): # Adding to a List 
         for team in data:
