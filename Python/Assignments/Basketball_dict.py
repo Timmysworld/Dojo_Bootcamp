@@ -42,6 +42,15 @@ players = [
 # Challenge 1: Update the Constructor
 # Update the constructor to accept a dictionary with a single player's information instead of individual arguments for the attributes.
 
+# Challenge 2: Create instances using individual player dictionaries.
+# Given these variables, create Player instances for each of the following dictionaries. Be sure to instantiate these outside the class     definition, in the outer scope.
+
+# Challenge 3: Make a list of Player instances from a list of dictionaries
+# Finally, given the example list of players at the top of this module (the one with many players) write a for loop that will populate an empty list with Player objects from the original list of dictionaries.
+
+# NINJA BONUS: Add a get_team(cls, team_list) @class method
+# Add an @class method called get_team(cls, team_list) that, given a list of dictionaries populates and returns a new list of Player objects. Be sure to test your method!
+
 class Player:
 
     # new class attribute - a list of all the players
