@@ -1,6 +1,3 @@
-from pickle import TRUE
-from tkinter import FALSE
-
 # For this assignment you will create the user class and add a couple methods!
 
 
