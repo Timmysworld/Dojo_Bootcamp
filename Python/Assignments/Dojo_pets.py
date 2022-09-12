@@ -28,18 +28,31 @@ class Pet:
         self.tricks = tricks
 
     def pet_health(self,level):
-        if self.health <= 25 and self.health < 50:
-            self.health += level
+        if self.health == 100 and self.health >= 50:
+            self.health = level
+            self.energy = "medium"
+            print(f"{self.name} is feeling tired let him REST.")
+        elif self.health < 50: 
+            self.health = level
             self.energy = "low"
             print(f"{self.name} is feeling sick go see a vet.")
-        elif self.health == 50 and self.health <= 75:
-            self.health += level
-            self.energy = "Medium"
-            print(f"{self.name} is feeling tired let him REST.")
-        elif self.health >= 75 and self.health == 100:
-            self.health += level 
+        elif self.health == 100:
+            self.health = level
             self.energy = "high"
             print(f"{self.name} is feeling like a Champ go play")
+
+        # if self.health < 25 and self.health < 50:
+        #     self.health == level
+        #     self.energy = "low"
+            
+        # elif self.health == 50 and self.health <= 75:
+        #     self.health == level
+        #     self.energy = "Medium"
+        #     print(f"{self.name} is feeling tired let him REST.")
+        # elif self.health >= 75 and self.health == 100:
+        #     self.health == level 
+        #     self.energy = "high"
+            
         # self.health += level
         return self
 
@@ -48,7 +61,6 @@ class Pet:
             self.energy += level
         return self
 
-        
     def eat(self):
         pass
     def play(self):
@@ -62,7 +74,7 @@ class Pet:
         print(f"Energy Levels: {self.energy}")
         print(f"Tricks: {self.tricks}")
         print(f"===========================")
-
+        return self
         
     @staticmethod
     def can_sleep(time):
@@ -73,12 +85,13 @@ class Pet:
 
 
 #CREATE NINJA 
-# pet_owner1 = Ninja('Timothy', 'Singleton')
-# pet_owner1.display_info()
+pet_owner1 = Ninja('Timothy', 'Singleton')
+pet_owner1.display_info()
 
 #CREATE PET
 pet1 = Pet('Stitch','Dog',100,'sit')
-pet1.display_pet_info().pet_health(50)
+pet1.display_pet_info().pet_health(25).display_pet_info()
+# pet1.pet_health(25).display_pet_info()
 
 
 # # implement the following methods:
@@ -86,3 +99,5 @@ pet1.display_pet_info().pet_health(50)
 # # eat() - increases the pet's energy by 5 & health by 10
 # # play() - increases the pet's health by 5
 # # noise() - prints out the pet's sound
+
+#Attribute ERROR: 'NoneType' object has no attribute ---- Check to see if RETURN SELF is on classes.
