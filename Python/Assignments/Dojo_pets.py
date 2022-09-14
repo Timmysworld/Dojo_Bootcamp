@@ -12,7 +12,8 @@ class Ninja:
         print(f"Owner: {self.first_name} {self.last_name}")
         # print(f"Pet: {self.pet_name}")
         # print(f"===========================")
-
+    def walk(self):
+        return self 
 # implement the following methods:
 # walk() - walks the ninja's pet invoking the pet play() method
 # feed() - feeds the ninja's pet invoking the pet eat() method
@@ -30,7 +31,7 @@ class Pet:
     def pet_health(self,level):
         if  self.health <= 25:
             self.health = level
-            self.energy = "low"
+            # self.energy = "low"
             print(f"{self.name} is feeling sick go see a vet.")
         
 
@@ -51,14 +52,25 @@ class Pet:
         # self.health += level
         return self
 
-    def sleep(self, level):
-        if Pet.can_sleep(self.energy):
-            self.energy += level
+    def sleep(self, time):
+        if Pet.can_sleep(time):
+            self.health -= time
+            print(f"{self.name} needs some rest")
+        else: 
+            print(f"{self.name} slept good, time to play")
         return self
 
-    def eat(self):
-        pass
+    def eat(self, amount):
+        if Pet.feeding(amount):
+            self.energy = "low"
+            print(f"{self.name} needs to eat! ")
+        else:
+            self.energy = "high"
+            print(f"{self.name} Ate pretty good")
+        return self
+        
     def play(self):
+        
         pass
     
     def display_pet_info(self):
@@ -73,19 +85,23 @@ class Pet:
         
     @staticmethod
     def can_sleep(time):
-        if time > 0:
-            return False
-        else:
+        if time < 13:
             return True
+        else:
+            return False
 
-
+    def feeding(amount):
+        if amount <= 2.5: # amount is in cups 
+            return True
+        else: 
+            return False
 #CREATE NINJA 
 pet_owner1 = Ninja('Timothy', 'Singleton')
-pet_owner1.display_info()
+# pet_owner1.display_info()
 
 #CREATE PET
 pet1 = Pet('Stitch','Dog',100,'sit')
-pet1.display_pet_info().pet_health(40).display_pet_info()
+# pet1.display_pet_info().sleep(15).display_pet_info()
 # pet1.pet_health(25).display_pet_info()
 
 
