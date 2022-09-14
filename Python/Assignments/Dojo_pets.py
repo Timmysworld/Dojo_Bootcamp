@@ -28,30 +28,25 @@ class Pet:
         self.tricks = tricks
 
     def pet_health(self,level):
-        if self.health == 100 and self.health >= 50:
-            self.health = level
-            self.energy = "medium"
-            print(f"{self.name} is feeling tired let him REST.")
-        elif self.health < 50: 
+        if  self.health <= 25:
             self.health = level
             self.energy = "low"
             print(f"{self.name} is feeling sick go see a vet.")
-        elif self.health == 100:
-            self.health = level
-            self.energy = "high"
-            print(f"{self.name} is feeling like a Champ go play")
+        
 
-        # if self.health < 25 and self.health < 50:
-        #     self.health == level
-        #     self.energy = "low"
-            
-        # elif self.health == 50 and self.health <= 75:
-        #     self.health == level
-        #     self.energy = "Medium"
+        # if self.health == 75 and self.health >= 50:
+        #     self.health = level
+        #     self.energy = "medium"
         #     print(f"{self.name} is feeling tired let him REST.")
-        # elif self.health >= 75 and self.health == 100:
-        #     self.health == level 
+        # elif self.health < 50: 
+        #     self.health = level
+        #     self.energy = "low"
+        #     print(f"{self.name} is feeling sick go see a vet.")
+        # elif self.health == 100:
+        #     self.health = level
         #     self.energy = "high"
+        #     print(f"{self.name} is feeling like a Champ go play")
+
             
         # self.health += level
         return self
@@ -90,7 +85,7 @@ pet_owner1.display_info()
 
 #CREATE PET
 pet1 = Pet('Stitch','Dog',100,'sit')
-pet1.display_pet_info().pet_health(25).display_pet_info()
+pet1.display_pet_info().pet_health(40).display_pet_info()
 # pet1.pet_health(25).display_pet_info()
 
 
