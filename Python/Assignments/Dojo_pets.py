@@ -3,6 +3,9 @@ class Ninja:
     def __init__(self, first_name , last_name):
         self.first_name = first_name
         self.last_name = last_name
+        self.pet = {
+            'dog': Pet(name="", type="", health="", tricks="" )
+        }
         # self.pet_name = pet_name
         # self.treats = treats
         # self.pet_food = pet_food
@@ -54,7 +57,7 @@ class Pet:
 
     def sleep(self, time):
         if Pet.can_sleep(time):
-            self.health -= time
+            self.health -= time * 5
             print(f"{self.name} needs some rest")
         else: 
             print(f"{self.name} slept good, time to play")
@@ -101,7 +104,7 @@ pet_owner1 = Ninja('Timothy', 'Singleton')
 
 #CREATE PET
 pet1 = Pet('Stitch','Dog',100,'sit')
-# pet1.display_pet_info().sleep(15).display_pet_info()
+pet1.display_pet_info().sleep(10).display_pet_info()
 # pet1.pet_health(25).display_pet_info()
 
 
