@@ -6,13 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Playground</title>
+    <style>
+        .boxes{
+            background-color: {{color}};
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome</h1>
-    <!-- <div class="wraper">
+    <div class="wrapper">
+        {%for _ in range(repeat) %}
         <div class="boxes"></div>
-        <div class="boxes"></div>
-        <div class="boxes"></div>
-    </div> -->
+        {% endfor %}
+
+        <div class="line"></div>
+    </div>
 </body>
 </html>
+
+<!-- NOTES --> 
+<!-- CSS WILL NOT RENDER FROM STYLE SHEET TO GRAB COLOR OF BOXES 
+YOU DO NOT NEED TO USE JINJA SYNTAX TO RENDER STYLE TAG ON HTML TAG. -->
+<!-- REPEAT IS DEFINED IN ROUTE THEREFORE IN FOR LOOP CAN ACCESS THE REPEAT. 
+REPEAT = CONTEXT VARIABLE THAT CONTROLS THE ROUTE  -->
