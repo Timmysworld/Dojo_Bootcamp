@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Checker Board | FLASK APP </title>
+    <style>
+        .gameBoard{
+            width: {{50 * repeat}}px;
+        }
+        .colorBox{
+            background-color: {{color}};
+        }
+        .colorBox2{
+            background-color: {{color2}};
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>CHECKER BOARD</h1>
+
+        <div class="board gameBoard">
+            {% for row in range(repeat) %}
+                {% for column in range(repeat) %}
+                    {% if (row + column) % 2 == 1 %}
+                        <div class="boxes colorBox"></div> 
+                    {% else %}
+                        <div class="boxes colorBox2"></div>  
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        
+    </div>
+    
+</body>
+</html>
