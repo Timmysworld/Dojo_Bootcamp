@@ -32,3 +32,10 @@ if __name__=="__main__":
 
 # session.clear()		# clears all keys
 # session.pop('key_name')		# clears a specific key
+# 
+#### COOKIES STORED #####
+# python3
+# >>> import base64
+# >>> base64.urlsafe_b64decode('eyJjb3VudCI6NH0===')
+# b'{"count":4}'
+# >>> 
