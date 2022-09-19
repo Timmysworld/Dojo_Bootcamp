@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.title{
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+h1{
+    font-family: "Oswald";
+    text-shadow: 2px 1px gray;
+}
+p{
+    padding: 10px;
+    margin: 0 25px 0 25px;
+}
+
+.counter_box{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 2px 2px black;
+    height: 350px;
+    width: 275px;
+}
+.counter_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.counter_text{
+    font-size: 2.5rem;
+    padding: 6px;
+}
+.btn_text{
+    font-size: 1.3rem;
+
+}
+button{
+    padding: 10px;
+    margin: 10px;
+    width: 110px;
+    border-radius: 20px;
+    box-shadow: 2px 2px black;
+    color: deepskyblue;
+    background-color: darkblue;
+}

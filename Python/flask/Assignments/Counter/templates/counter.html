@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Flask counter app that stores the amount of time you visit the site, stored with session">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h1>Let's Count</h1>
+            <p> A counter app thats stores your visit with sessions</p>
+        </div> 
+        <div class="counter_box">
+            <div class="counter_text">
+                <span id="output">{{session["count"]}}{{session["count2"]}}</span>
+            </div>
+            <div class="btn">
+                <a href="/"><button class="btn_text">+ 2 </button></a> 
+                <a href="/destroy_session"><button class="btn_text">Reset</button></a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
