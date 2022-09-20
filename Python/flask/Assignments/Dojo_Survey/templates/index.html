@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Simple survey using Flask and redirecting users to results page">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-container">
+            <h1>Dojo Survey</h1>
+            <form class=form-data action="/process" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+
+                <label for="location">Dojo Location:</label>
+                <select name="location" id="location">
+                    <option value="location">--Select A Location--</option>
+                    <option value="Bellevue, WA">Bellevue, WA</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Sillicon Valley, CA">Sillicon Valley, CA</option>
+                    <option value="Online">Online</option>
+                </select>
+                
+                <label for="favorite language">Favorite Language:</label>
+                <select name="favorite language" id="favorite language">
+                    <option value="favorite language">--Select A Programing Language--</option>
+                    <option value="HTML & CSS">HTML & CSS</option>
+                    <option value="JAVASCRIPT">JAVASCRIPT</option>
+                    <option value="PYTHON">PYTHON</option>
+                    <option value="SQL">SQL</option>
+                    <option value="JAVA">JAVA</option>
+                    <option value="C++">C++</option>
+                </select>
+
+                <label for="comment">Comment</label>
+                <textarea name="comment" id="comment" cols="40" rows="10"></textarea>
+                <button class="btn-submit" type="submit" value="process">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

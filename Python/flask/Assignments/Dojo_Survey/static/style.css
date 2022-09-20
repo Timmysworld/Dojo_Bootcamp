@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-family: 'Play', sans-serif;
+    color: gold;
+}
+.form-container{
+    margin-top: 40px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+}
+.form-data{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+form, label, input, select, textarea{
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-submit{ 
+    margin-right: 190px;
+    width: 100px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: gold;
+    color: cadetblue;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.test{
+    background-color: white;
+    color: black ;
+}
