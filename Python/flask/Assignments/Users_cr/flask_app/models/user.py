@@ -25,16 +25,25 @@ class User:
         query = "INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES ( %(fname)s, %(lname)s, %(email)s, NOW(), NOW() );"
         return connectToMySQL ('Users_cr').query_db(query, data)
     
-    # @classmethod
-    # def get_one(cls, id):
-    #     data ={"id": id}
-    #     query = "SELECT * FROM users WHERE id = %(id)s;"
-    #     # session = 
-    #     return connectToMySQL('Users_cr').query_db(query,data)
+    @classmethod
+    def show_user(cls, id):
+        data ={"id": id}
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        results = connectToMySQL('Users_cr').query_db(query,data)
+
+        return (cls(results[0]))
 
     @classmethod
     def delete_user(cls,id):
         data = {"id": id}
-        query = "DELETE * FROM users WHERE id = %(id)s;"
+        query = "DELETE FROM users WHERE id = %(id)s;"
         results = connectToMySQL('Users_cr').query_db(query,data)
         return results
+    
+    @classmethod
+    def edit_user(cls,data):
+        query = "UPDATE users SET first_name = %(fname)s, last_name = %(lname)s, email = %(email)s  WHERE id = %(id)s;"
+        results = connectToMySQL('Users_cr').query_db(query,data)
+        return results
+
+## html=>(via- url, request.form)=> server/controller=> (via model method/ user.save) -> model=> (via- mysqlconnection.py ) =>Db

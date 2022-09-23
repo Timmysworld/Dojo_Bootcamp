@@ -33,10 +33,12 @@ form, label, input, select, textarea{
     padding: 5px;
     font-family: 'Poppins', sans-serif;
 }
-
+.btn-edit, .btn-create{
+    margin-right: 190px;
+}
 .btn-submit{ 
     margin-top: 10px;
-    margin-right: 190px;
+    /* margin-right: 190px; */
     width: 105px;
     height: 25px;
     border-radius: 20px;

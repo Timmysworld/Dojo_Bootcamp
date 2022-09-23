@@ -14,18 +14,22 @@
 <body>
     <div class="wrapper">
         <div class="form-container">
-            <h1>Dojo Users</h1>
-            <p>Create a new user </p>
-            <form class=form-data action="/create_user" method="post">
+            <h1>Show User</h1>
+            <p>Your info is updated </p>
+            <form class=form-data action="" method="">
                 <label for="fname">First Name:</label>
-                <input type="text" name="fname" id="name">
+                <input type="text" name="fname" id="name" value="{{show_users.first_name}}" disabled>
 
                 <label for="lname">Last Name:</label>
-                <input type="text" name="lname" id="name">
+                <input type="text" name="lname" id="name" value="{{show_users.last_name}}" disabled>
 
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email">
-                <button class="btn-submit btn-create" type="submit" value="create_user">Create</button>
+                <input type="text" name="email" id="email" value="{{show_users.email}}" disabled>
+                <div class="btn-group">
+                    <a href="/users/{{show_users.id}}/edit"><button class="btn-submit" type="button">Edit</button></a> 
+                    <a href="/users/{{show_users.id}}/delete"><button class="btn-submit" type="button">Delete</button></a>
+                </div>
+                
             </form>
         </div>
     </div>
