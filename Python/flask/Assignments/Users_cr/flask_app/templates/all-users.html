@@ -14,23 +14,25 @@
     <div class="wrapper">
         <div class="form-container">
             <h1>Dojo Users Results</h1>
-            <table class="form-data">
-                <tr>
+            <table class="table">
+                <tr class="headings">
                     <th>Id</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Created_at</th>
-                    <th>Updated_at</th>
+                    <th>Updated_at</th> 
                 </tr>
-                <tr>
-                    {% for users in User%}
-                    <td>{{users.id}}</td>
-                    <td>{{users.first_name}}</td>
-                    <td>{{users.last_name}}</td>
-                    <td>{{users.email}}</td>
-                    <td>{{users.Created_at}}</td>
-                    <td>{{users.Updated_at}}</td>
+                <tr class="rows">
+                    {% for users in all_users%}
+                    <tr>
+                        <td>{{users.id}}</td>
+                        <td>{{users.first_name}}</td>
+                        <td>{{users.last_name}}</td>
+                        <td>{{users.email}}</td>
+                        <td>{{users.created_at}}</td>
+                        <td>{{users.updated_at}}</td>
+                    <tr>
                     {% endfor%}
                 </tr>
             </table>
@@ -38,17 +40,3 @@
     </div>
 </body>
 </html>
-
-<!-- <form class=form-data>
-                <label for="fname">First Name:</label>
-                <input class="test" type="text" value="{{request.form['fname']}}" disabled>
-                <!-- <input type="text" name="name" id="name"> -->
-                <!-- <label for="lname">Last Name:</label>
-                <input class="test" type="text" value="{{request.form['lname']}}" disabled>
-                <!-- <select name="location" id="location"></select> -->
-                <!-- <label for="email">Email:</label>
-                <input class="test" type="text" value="{{request.form['email']}}" disabled> -->
-                <!-- <select name="favorite language" id="favorite language"></select> -->
-                
-                <!-- <a href="/index.html"><button class="btn-submit" type="submit" value="">Go Back!</button></a> -->
-            <!-- </form> --> 

@@ -9,7 +9,6 @@ def index():
 @app.route('/create_user', methods=['POST'])
 def create_user():
     data = {
-        # "id": request.form['id'],
         "fname": request.form['fname'],
         "lname": request.form['lname'],
         "email": request.form['email']

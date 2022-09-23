@@ -49,3 +49,13 @@ form, label, input, select, textarea{
     background-color: white;
     color: black ;
 }
+.table{
+    width: 750px;
+    margin-top: 10px;
+}
+.headings{
+    color: white;
+}
+td{
+    padding: 10px;
+}

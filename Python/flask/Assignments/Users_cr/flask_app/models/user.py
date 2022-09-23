@@ -25,12 +25,12 @@ class User:
         query = "INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES ( %(fname)s, %(lname)s, %(email)s, NOW(), NOW() );"
         return connectToMySQL ('Users_cr').query_db(query, data)
     
-    @classmethod
-    def get_one(cls, id):
-        data ={"id": id}
-        query = "SELECT * FROM users WHERE id = %(id)s;"
-        # session = 
-        return connectToMySQL('Users_cr').query_db(query,data)
+    # @classmethod
+    # def get_one(cls, id):
+    #     data ={"id": id}
+    #     query = "SELECT * FROM users WHERE id = %(id)s;"
+    #     # session = 
+    #     return connectToMySQL('Users_cr').query_db(query,data)
 
     @classmethod
     def delete_user(cls,id):
