@@ -21,3 +21,8 @@ def user_info():
     users = User.get_all()
     return render_template('all-users.html',all_users = users)
 
+@app.route('/users/<id>/delete')
+def delete_user(id):
+    #file.class.classmethod()
+    Users.User.delete_user(id)
+    return redirect('/users/all')
