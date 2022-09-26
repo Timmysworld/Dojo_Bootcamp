@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>New Ninja</h1>
+            <form class="ninja_form" action="">
+                <label for="dojo">Dojo</label>
+                <select name="dojo" id="">
+                    <option value="">Pick a Dojo</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" id="">
+    
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="">
+    
+                <label for="age">Age:</label>
+                <input type="text" name="age" id="">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

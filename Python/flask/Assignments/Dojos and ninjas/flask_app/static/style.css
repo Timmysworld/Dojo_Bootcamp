@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title{
+    margin: 0 auto;
+    text-align: center;
+}
+.main-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+.container{
+    padding: 10px;
+    border: 2px solid black ;
+}
+
+form{
+    padding: 15px;
+}
+
+.ninja_form{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 50%;
+}
