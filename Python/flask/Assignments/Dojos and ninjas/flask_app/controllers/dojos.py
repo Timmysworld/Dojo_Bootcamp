@@ -4,9 +4,14 @@ from flask_app.models import dojo
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return redirect('/dojos')
 
-@app.route('/create_dojo', methods =['POST'])
+@app.route('/dojos')
+def dojos():
+    dojos = dojo.Dojo.get_all()
+    return render_template('index.html', all_dojos = dojos)
+
+@app.route('/create/dojo', methods =['POST'])
 def create_dojo():
     # print("A")
     # print(request.form)
@@ -14,9 +19,11 @@ def create_dojo():
         "name": request.form['name'],
     }
     dojo.Dojo.save(data)
-    return redirect('/')
+    return redirect('/dojos')
 
-@app.route("/dojos")
-def dojos():
-    dojos = dojo.Dojo.get_all()
-    return render_template('index.html', all_dojos = dojos)
+@app.route('/dojo/<int:id>')
+def show_dojo(id):
+    data = {
+        "id": id
+    }
+    return render_template('dojo.html', dojo=dojo.Dojo.get_dojo_ninja(data))

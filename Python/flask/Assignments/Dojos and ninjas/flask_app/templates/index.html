@@ -16,7 +16,7 @@
             <p>You can Create, Read, Update or Delete. But the goal here to see which dojo gains the most ninjas</p>
         </div>
         <div class="main-container">
-            <div class="container ">
+            <div class="container form-contain ">
                 <h2>New Dojo</h2>
                 <form class="new-dojo" action="/create_dojo" method="post">
                     <label for="name"> New Dojo:</label>
@@ -26,15 +26,14 @@
             </div>
             <div class="container">
                 <h2>All Dojos</h2>
-                {% for dojo in dojos %}
-                    <ul>
-                        <a href="">{{all_dojos.name}}</a>
-                    </ul>
+                <ul>
+                {% for dojo in all_dojos %}
+                    <a href="/dojo/{{dojo.id}}"><li>{{dojo.name}}</li></a>
                 {% endfor %}
+                </ul>
+                <a href="/ninjas" class="text-center mx-auto">Add Ninja</a>
             </div>
         </div>
-        
-
     </div>
 </body>
 </html>

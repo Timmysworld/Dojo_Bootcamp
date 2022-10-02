@@ -20,13 +20,15 @@
 }
 .container{
     padding: 10px;
-    border: 2px solid black ;
+    /* border: 2px solid black ; */
 }
 
 form{
     padding: 15px;
 }
-
+ul{
+    list-style: none;
+}
 .ninja_form{
     display: flex;
     flex-direction: column;
