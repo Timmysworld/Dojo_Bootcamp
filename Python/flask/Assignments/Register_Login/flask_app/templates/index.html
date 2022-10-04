@@ -15,10 +15,10 @@
             <form action="/register/user" class="p-5 mt-3" method="post">
                 <h2>Register</h2>
                 <div class="mb-3">
-                    {% with messages = get_flashed_messages() %}
+                    {% with messages = get_flashed_messages(category_filter=['register']) %}
                         {% if messages %}
                             {% for message in messages %}
-                                <p>{{message}}</p>
+                                <p class="text-warning">{{message}}</p>
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
@@ -45,15 +45,22 @@
             </form>
         </div>
         <div class="login-container">
-            <form action="" class="p-5 mt-3">
+            <form action="/login" class="p-5 mt-3" method="post">
                 <h2>Login In </h2>
                 <div class="mb-3">
+                    {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p class="text-warning">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="formGroupExampleInput" >
+                    <input type="email" class="form-control" name="email" >
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="formGroupExampleInput2">
+                    <input type="password" class="form-control" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

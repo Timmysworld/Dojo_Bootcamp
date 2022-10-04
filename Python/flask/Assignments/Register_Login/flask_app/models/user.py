@@ -18,17 +18,26 @@ class User:
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        
 
     @staticmethod
     def validate_user(user):
         is_valid = True 
         if len(user['fname'])<3:
-            flash("First Name needs to be at least 3 characters.")
+            flash("First Name needs to be at least 3 characters.","register")
             is_valid = False
         if len(user['lname'])<3:
+            flash("Last Name needs to be at least 3 characters.","register")
+            is_valid = False
+        if not EMAIL_REGEX.match(user['email']): 
+            flash("Invalid email address!","register")
             is_valid = False
         if len(user['password'])<10:
-            flash("Password must be at least 10 characters.")
+            flash("Password must be at least 10 characters.","register")
+            is_valid = False
+        if user['confirmpass'] != user['password']:
+            flash('Password does not Match Try again',"register")
+            is_valid = False
         return is_valid
 
     @classmethod
@@ -39,11 +48,11 @@ class User:
         ;"""
         return connectToMySQL("Register_login").query_db(query, data)
 
-    # @classmethod
-    # def get_by_email(cls,data):
-    #     query = "SELECT * FROM users WHERE email = %(email)s;"
-    #     result = connectToMySQL("Register_login").query_db(query,data)
-    #     # Didn't find a matching user
-    #     if len(result) < 1:
-    #         return False
-    #     return cls(result[0])
+    @classmethod
+    def get_by_email(cls,data):
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        result = connectToMySQL("Register_login").query_db(query,data)
+        # Didn't find a matching user
+        if len(result) < 1:
+            return False
+        return cls(result[0])
