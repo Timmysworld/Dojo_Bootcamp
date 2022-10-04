@@ -12,28 +12,34 @@
 <body>
     <div class="wrapper">
         <div class="register-container">
-            
-            <form action="" class="p-5 mt-3">
+            <form action="/register/user" class="p-5 mt-3" method="post">
                 <h2>Register</h2>
                 <div class="mb-3">
-                    <label for="fname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <label for="fname"class="form-label">First Name</label>
+                    <input type="text"class="form-control" name="fname">
                 </div>
                 <div class="mb-3">
-                    <label for="lname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2">
+                    <label for="lname"class="form-label">Last Name</label>
+                    <input type="text"class="form-control" name="lname">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="formGroupExampleInput2">
+                    <label for="email"class="form-label">Email</label>
+                    <input type="email"class="form-control" name="email">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="formGroupExampleInput2" >
+                    <input type="password" class="form-control" name="password">
                 </div>
                 <div class="mb-3">
-                    <label for="confirmpass" class="form-label">Confirm Password</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" >
+                    <label for="password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirmpass">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
