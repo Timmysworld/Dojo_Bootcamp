@@ -40,7 +40,7 @@ def register():
     user_id = user.User.save(data)
     # store user id into session
     session['user_id'] = user_id
-    return redirect('/')
+    return redirect('/dashboard')
 
 #login
 @app.route('/login', methods = ['POST'])
@@ -60,4 +60,18 @@ def login():
     # if the passwords matched, we set the user_id into session
     session['user_id'] = user_in_database.id
     print("successful login")
+    return redirect('/dashboard')
+
+#logout
+@app.route('/logout')
+def logout():
+    session.clear()
     return redirect('/')
+
+#dashboard
+@app.route('/dashboard')
+def dashboard():
+    if "user_id" not in session:
+        return redirect('/')
+    logged_in_user = user.User.get_by_id(session["user_id"])
+    return render_template('dashboard.html', logged_in_user = logged_in_user)

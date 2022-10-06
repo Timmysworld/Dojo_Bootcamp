@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS `Register_login`.`users` (
   `last_name` VARCHAR(255) NULL,
   `email` VARCHAR(255) NULL,
   `password` VARCHAR(255) NULL,
-  `created_at` VARCHAR(255) NULL DEFAULT 'NOW()',
-  `updated_at` VARCHAR(255) NULL DEFAULT 'NOW ON UPDATE NOW',
+  `created_at` DATETIME NULL DEFAULT NOW(),
+  `updated_at` DATETIME NULL DEFAULT NOW() ON UPDATE NOW(),
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

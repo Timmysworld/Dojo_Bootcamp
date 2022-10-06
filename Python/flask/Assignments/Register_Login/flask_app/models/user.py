@@ -29,7 +29,7 @@ class User:
         if len(user['lname'])<3:
             flash("Last Name needs to be at least 3 characters.","register")
             is_valid = False
-        if not EMAIL_REGEX.match(user['email']): 
+        if len(user['email']) == 0 or not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!","register")
             is_valid = False
         if len(user['password'])<10:
@@ -38,6 +38,9 @@ class User:
         if user['confirmpass'] != user['password']:
             flash('Password does not Match Try again',"register")
             is_valid = False
+        # if user is not False:
+        #     flash("email is already in use!!", "register")
+        #     is_valid = False
         return is_valid
 
     @classmethod
@@ -55,4 +58,12 @@ class User:
         # Didn't find a matching user
         if len(result) < 1:
             return False
+        return cls(result[0])
+
+#for dashboard route
+    @classmethod
+    def get_by_id(cls, id):
+        data = {"id": id}
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        result = connectToMySQL("Register_login").query_db(query,data)
         return cls(result[0])
