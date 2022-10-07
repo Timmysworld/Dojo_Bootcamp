@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    margin: 50px;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}
+
+form{
+    background-color: gray;
+}
+
+/* Recipe HTML */
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.title{
+    margin-right: 250px;
+}
+.btn-header{
+    display: flex;
+    flex-direction: row;
+    gap: 50px
+}
