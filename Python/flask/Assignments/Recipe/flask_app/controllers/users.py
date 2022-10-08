@@ -27,31 +27,13 @@ def register():
 
     user_id = user.User.save(data)
     session['user_id'] = user_id
-    return redirect('/recipe')
+    return redirect('/recipes')
 
-
-@app.route('/recipe/new', methods = ['POST'])
-def new_recipe():
-    return
-
-
-#READ --> get_by_id(user.py)
-@app.route('/recipe')
-def dashboard():
-    if "user_id" not in session:
-        return redirect('/')
-    logged_in_user = user.User.get_by_id(session["user_id"])
-    return render_template('recipes.html', logged_in_user = logged_in_user)
-
-#UPDATE
-
-#DELETE
 
 #LOG IN LOG OUT --> get_by_email(user.py)
 @app.route('/login', methods = ['POST'])
 def login():
-    data = {"email": request.form['email']}
-    user_in_database = user.User.get_by_email(data)
+    user_in_database = user.User.get_by_email(request.form['email'])
     if not user_in_database:
         flash("Invalid Login Information", "login")
         return redirect('/')
@@ -59,7 +41,7 @@ def login():
         flash("Invalid Login Information", "login")
         return redirect('/')
     session['user_id'] = user_in_database.id
-    return redirect('/recipe')
+    return redirect('/recipes')
     
 @app.route('/logout')
 def logout():

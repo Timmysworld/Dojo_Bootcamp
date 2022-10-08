@@ -17,17 +17,17 @@ form{
 }
 
 /* Recipe HTML */
-header{
+/* header{
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 10px;
-}
-.title{
+} */
+/* .title{
     margin-right: 250px;
-}
-.btn-header{
+} */
+/* .btn-header{
     display: flex;
     flex-direction: row;
     gap: 50px
-}
+} */
