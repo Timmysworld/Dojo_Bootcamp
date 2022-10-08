@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `recipe`.`recipes` (
   `description` VARCHAR(255) NULL,
   `under_thirty` VARCHAR(255) NULL,
   `instructions` TEXT(255) NULL,
+  `recipe_date` DATETIME NULL,
   `created_at` DATETIME NULL DEFAULT NOW(),
   `updated_at` DATETIME NULL DEFAULT NOW() ON UPDATE NOW(),
   `user_id` INT NOT NULL,
