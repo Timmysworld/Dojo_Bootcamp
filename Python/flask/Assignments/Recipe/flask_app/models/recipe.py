@@ -60,6 +60,20 @@ class Recipe:
         recipe = cls(results[0])
         return recipe
 
+    @classmethod
+    def update_recipe(cls,data):
+        query = """
+        UPDATE recipes SET 
+        name = %(name)s , description = %(description)s, recipe_date = %(recipe_date)s, instructions = %(instructions)s, under_thirty =%(under_thirty)s 
+        WHERE recipes.id = %(id)s
+        """
+        return  connectToMySQL(cls.db).query_db(query,data)
 
-    
+    @classmethod
+    def delete_recipe(cls,data):
+        data = {"id":data}
+        query = """
+        DELETE FROM recipes WHERE id=%(id)s;
+        """
+        return connectToMySQL(cls.db).query_db(query,data)
 
