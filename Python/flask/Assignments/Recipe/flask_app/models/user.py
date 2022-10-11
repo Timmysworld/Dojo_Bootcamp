@@ -83,10 +83,10 @@ class User:
         else:
             return cls(result[0])
 
-    #for recipe route
+    #for /recipes route
     @classmethod
-    def get_by_id(cls,id):
-        data = {"id":id}
+    def get_by_id(cls,user_id):
+        data = {"id":user_id}
         query = "SELECT * FROM users WHERE id = %(id)s;"
         result = connectToMySQL(cls.db).query_db(query,data)
         return cls(result[0])

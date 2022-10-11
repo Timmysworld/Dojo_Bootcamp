@@ -8,7 +8,12 @@ from flask_app.models import user,recipe
 def dashboard():
     if "user_id" not in session:
         return redirect('/')
+
+    # data = {
+    #     "id":session["user_id"]
+    # }
     logged_in_user = user.User.get_by_id(session["user_id"])
+    # logged_in_user = user.User.get_by_id(data)
     recipes = recipe.Recipe.get_all_recipes()
     return render_template('recipes.html', logged_in_user = logged_in_user, recipes = recipes)
 
@@ -47,13 +52,22 @@ def edit_recipe(id):
     edit_recipe = recipe.Recipe.get_recipe(id)
     return render_template("edit-recipe.html", logged_in_user = logged_in_user, recipe = edit_recipe)
 
-@app.route('/recipe/<int:id>/update',methods = ['POST'])
+@app.route('/recipe/<int:id>/update', methods = ['POST'])
 def update_recipe(id):
     if "user_id" not in session:
         return redirect('/')
     if recipe.Recipe.validate_recipes(request.form):
-        recipe.Recipe.update_recipe(request.form)
+        data = {
+            "id": id,
+            "name": request.form['name'],
+            "description": request.form['description'],
+            "recipe_date": request.form['recipe_date'],
+            "instructions": request.form['instructions'],
+            "under_thirty": request.form['under_thirty']
+        }
+        recipe.Recipe.update_recipe(data)
         return redirect(f"/show/{id}")
+    print("BBB")
     return redirect(f"/recipe/{id}/update")
 
 @app.route("/show/<int:id>")

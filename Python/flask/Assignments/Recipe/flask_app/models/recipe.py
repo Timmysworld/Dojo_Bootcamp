@@ -2,6 +2,7 @@ from unittest import result
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_app import app 
+from flask_app.models import user
 
 class Recipe:
     db ="recipe"
@@ -14,6 +15,8 @@ class Recipe:
         self.recipe_date = data['recipe_date']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.user_id = data["user_id"]
+        self.user = None # accesses the User class
 
     @staticmethod
     def validate_recipes(recipe):
@@ -42,19 +45,26 @@ class Recipe:
     @classmethod
     def get_all_recipes(cls):
         query = """
-        SELECT * FROM recipes ORDER BY created_at;
+        SELECT * FROM recipes 
+        JOIN users ON recipes.user_id = users.id;
         """
         results = connectToMySQL(cls.db).query_db(query)
         recipes= []
-        for row in results:
-            recipes.append(cls(row))
+        
+        for recipe in results: #class association
+            this_recipe = cls(recipe)
+            this_user = user.User.get_by_id(recipe["user_id"])
+            this_recipe.user = this_user
+            recipes.append(this_recipe)
         return recipes
 
     @classmethod
     def get_recipe(cls,recipe_id):
         data = {"id": recipe_id}
         query = """
-        SELECT * FROM recipes JOIN users on recipes.user_id = users.id WHERE recipes.id = %(id)s;
+        SELECT * FROM recipes 
+        JOIN users ON recipes.user_id = users.id 
+        WHERE recipes.id = %(id)s;
         """
         results = connectToMySQL(cls.db).query_db(query,data)
         recipe = cls(results[0])
@@ -64,14 +74,14 @@ class Recipe:
     def update_recipe(cls,data):
         query = """
         UPDATE recipes SET 
-        name = %(name)s , description = %(description)s, recipe_date = %(recipe_date)s, instructions = %(instructions)s, under_thirty =%(under_thirty)s 
-        WHERE recipes.id = %(id)s
+        name = %(name)s, description = %(description)s, recipe_date = %(recipe_date)s, instructions = %(instructions)s, under_thirty = %(under_thirty)s 
+        WHERE recipes.id = %(id)s;
         """
         return  connectToMySQL(cls.db).query_db(query,data)
 
     @classmethod
-    def delete_recipe(cls,data):
-        data = {"id":data}
+    def delete_recipe(cls,recipe_id):
+        data = {"id":recipe_id}
         query = """
         DELETE FROM recipes WHERE id=%(id)s;
         """

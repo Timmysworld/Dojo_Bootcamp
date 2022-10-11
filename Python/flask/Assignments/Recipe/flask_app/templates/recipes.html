@@ -35,8 +35,14 @@
             <tr>
                 <td>{{recipe.name}}</td>
                 <td>{{recipe.under_thirty}}</td>
-                <td>{{users_id}}</td>
-                <td> <a href="/recipe/{{recipe.id}}/view">View Recipe</a> | <a href="/recipe/{{recipe.id}}/edit">Edit</a> | <a href="/recipe/{{recipe.id}}/delete">Delete</a></td>
+                <td>{{recipe.user.first_name}}</td>   
+                <td> 
+                    {% if session["user_id"] != recipe.user_id %}
+                    <a href="/recipe/{{recipe.id}}/view">View Recipe</a>  
+                    {% else %}
+                    <a href="/recipe/{{recipe.id}}/edit">Edit</a> | <a href="/recipe/{{recipe.id}}/delete">Delete</a>
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
             </tbody>
