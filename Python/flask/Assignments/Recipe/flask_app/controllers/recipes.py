@@ -1,4 +1,3 @@
-from logging import LoggerAdapter
 from flask_app import app
 from flask import render_template, request, redirect, session,flash
 from flask_app.models import user,recipe 
@@ -8,7 +7,6 @@ from flask_app.models import user,recipe
 def dashboard():
     if "user_id" not in session:
         return redirect('/')
-
     # data = {
     #     "id":session["user_id"]
     # }
@@ -16,7 +14,6 @@ def dashboard():
     # logged_in_user = user.User.get_by_id(data)
     recipes = recipe.Recipe.get_all_recipes()
     return render_template('recipes.html', logged_in_user = logged_in_user, recipes = recipes)
-
 
 @app.route('/recipe/new', methods = ['POST'])
 def create_recipe():
