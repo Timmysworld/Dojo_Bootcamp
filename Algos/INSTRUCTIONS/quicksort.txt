@@ -1,0 +1,45 @@
+PARTITION 
+
+    Before addressing quicksort, we must first understand  partition. 
+
+    PARTITIONING an array means that we will divide it into two portions - the small values and the large values. The dividing point between the two portions is called the  pivot.  The  pivot can be  any value in the array.  Beyond making a small group and a large group, the values are not sorted. Below we show some examples of partitioned arrays.
+
+    For this array, the pivot is the value 8.
+    Notice that the values are not sorted, but everything to the left of 8 is smaller than 8. 
+    Everything to the right is larger than 8.
+    [1, 4, 2, 7, 6, 3, 8, 20, 9, 15, 12, 10, 30 ]
+
+    For this array, the pivot is the value 3.
+    Notice that the pivot may be placed anywhere in the array, not necessarily in the center.
+    [1, 3, 5, 4, 8, 30, 20, 17, 7]
+
+
+HOARE'S partitioning algorithm
+
+There are different partitioning algorithms we can explore. Here, we will focus on Hoare's algorithm. Remember that we are assuming that there are no duplicate values in the array.
+
+    1.Choose a pivot value. 
+        This can be any value in the array. 
+        There are extensive discussions we could have about choosing the optimum pivot value. Some people always pick the left-most value. While this is easy to execute, this could potentially cause our runtime to increase dramatically. We will discuss why shortly. A better approach is to pick a random value, which is the strategy we will use from now on.
+
+    2.Scan the values in the array from the left and from the right.  
+        Initialize two pointers (we use i and j) at the left-most and right-most values. 
+        Starting with i, iterate over the values to the left of the pivot. Since these values should be smaller than the pivot, stop when we encounter anything that is not less than the pivot (this includes stopping at the pivot itself should we encounter it). 
+        When i stops, move to j. Now we are checking to make sure that the value at j is larger than the pivot. Iterate to the left until we encounter anything that is not greater than the pivot (this includes stopping at the pivot itself should we encounter it).
+
+    3.Swap the values at i and j
+        When both i and j are stopped, that means i is pointing at something too large and j is pointing at something too small. Therefore, we may swap these values and repeat step 2.
+    
+    4. Break when i = j
+        When i and j arrive at the same index, then we know that we have successfully partitioned. Everything to the left of i is smaller than that value, and everything to the right of j is greater. Therefore, wherever i and j are, we know this is the pivot.
+
+    5. Return j
+        To continue with the quicksort algorithm, we need to know where the array had been partitioned. Since partitioning may have moved the pivot value from where it started, we need to return the position of the pivot. We could return either i or j since they are the same. Conventionally we return j.
+
+
+    Quicksort continuously calls partition on both sides of the pivot
+        Once we have a partition algorithm working for us, we may use it to implement quicksort. The plan is to continuously call partition on the portions of the array to the left and right of the returned pivot. The diagram below is using n to refer to the final position in the array to be sorted.
+
+
+
+
