@@ -8,27 +8,10 @@ const MoreForm = (props) => {
     const [confirmPassword, setConfirmPassword] = useState("");
     // const [errorMessage, setErrorMessage] = useState({first_name:"",last_name:"",email:"",password:"",confirmPassword:""});
 
-    // const validations = () =>{
-        
-    //     if(first_name < 2){
-    //         //prev = important when using previous last function of state.
-    //         setErrorMessage(prev=>({...prev,first_name:"First Name must be at least 2 characters"}))
-    //     }else{
-    //          // an empty string is considered a "falsy" value
-    //         setErrorMessage(prev=>({...prev,first_name:""}))
-    //         setErrorMessage("");
-    //     }
-    //     if(last_name.length < 2){
-    //         setErrorMessage(prev=>({...prev,last_name:"Last Name must be at least 2 characters"}))
-    //     }else{
-    //         setErrorMessage(prev=>({...prev,last_name:""}))
-    //         setErrorMessage("");
-    //     }
-    // }
 
     return (
         <div>
-            <form>
+            <form >
                 <div>
                     <label htmlFor='first_name'>First Name:</label>
                     <input 
