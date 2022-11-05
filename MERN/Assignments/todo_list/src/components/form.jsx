@@ -11,6 +11,7 @@ const Form = ({list,setList}) => {
             // default complete is false
             {content: input, complete : false}
         ])
+        setInput("");
     }
     return (
         <div className="FormDiv">
@@ -27,7 +28,7 @@ const Form = ({list,setList}) => {
                     onChange={(e)=>setInput(e.target.value)}/>
                 <button type="submit">ADD!</button>
             </form>
-            {input}
+            {/* {input} */}
 
             
         </div>

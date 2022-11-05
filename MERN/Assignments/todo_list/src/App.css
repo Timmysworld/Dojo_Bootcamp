@@ -3,15 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
-.App-header, .NavBar{
-    background-color: grey;
+.App-header{
+    /* background-color: grey; */
     padding: 10px;
 }
-navbar{
+/* navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 h1{
     margin: 25px 0 ;
 }
@@ -63,15 +63,26 @@ button{
     box-sizing: border-box;
     margin: 8px 5px;
 }
+.smallBtn{
+    background: none;
+    border: none;
+}
 .FormResults{
     margin: auto;
     width: 45vw;
-    box-shadow: 2px 4px gray;
+    box-shadow: 4px 6px gray;
+    
 }
 
 Table{
     background-color: #F6F790;
+    
 }
 .check{
     width: 25%;
+    height: 15px;
 }
+.complete{
+    text-decoration: line-through;
+}
+

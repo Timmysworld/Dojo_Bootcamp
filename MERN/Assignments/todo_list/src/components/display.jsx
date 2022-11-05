@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-// import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 
 const Display = ({list,setList}) => {
     const change = (e) => {
@@ -38,18 +38,25 @@ const Display = ({list,setList}) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <TableRow>
-                        <TableCell>Frozen yoghurt</TableCell>
-                        <TableCell>
+                    {/* get every object in the list */}
+                    {list.map( (item, index) =>
+                        <TableRow>
+                            <TableCell>
+                                <span className={(item.complete)? "complete":null}>
+                                    {item.content}
+                                </span>
+                            </TableCell>
+
+                            <TableCell>
                             <input type="checkbox" className='check' onChange={ e => change(item) }/> | 
-                            <button className='smallBtn' onClick={ e => deleteMe(item.content) }>
-                            Delete
+                            <button className='smallBtn' onClick={ e => deleteMe(item.content) }> <DeleteTwoToneIcon />
                             </button>
                         </TableCell>
+
                     </TableRow>
-                    <TableRow>
-                        <TableCell>Cupcake</TableCell>
-                        
+                    )}
+                    
+                    <TableRow>                    
                     </TableRow>
                 </TableBody>
             </Table>
