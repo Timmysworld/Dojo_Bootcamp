@@ -1,0 +1,32 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.colorBox{
+    padding: 20px;
+    width: min-content;
+    height: min-content;
+    margin: 15px;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+/* .formBox{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 10px
+    
+} */
+
+
+
+main{
+    display: flex;
+    justify-content: center;
+}
