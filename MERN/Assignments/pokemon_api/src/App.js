@@ -37,10 +37,7 @@ function App() {
         ))
       }
 
-      {/* {pokemon.length > 0 && pokemon.map((pokemon, index)=>{
-                return (<div key={index}>{pokemon.name}</div>)
-            })} */}
-
+  
       </>
 
     </div>
