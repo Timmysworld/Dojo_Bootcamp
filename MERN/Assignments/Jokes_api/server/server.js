@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const port = 8000
 
 require("./config/mongoose.config");
 
@@ -11,6 +12,6 @@ app.use(
 const AllMyJokesRoutes = require("./routes/jokes.routes");
 AllMyJokesRoutes(app);
 
-app.listen(PORT = 8000,() => 
-    console.log(`The server is all fired up on ${PORT}`)
+app.listen(port,() => 
+    console.log(`The server is all fired up on ${port}`)
 );

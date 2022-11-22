@@ -1,53 +1,45 @@
 const Joke = require('../models/jokes.model');
 
-module.exports.findAllJokes = (req,res) =>{
+const getAllJokes = (req, res) => {
     Joke.find()
-        .then((allTheJokes)=>{
-            res.json({ joke: allTheJokes })
-        })
-        .catch((err)=>{
-            res.json({message: 'Something went wrong',error: err })
-        });
-}
+        .then((allJokes) => res.json(allJokes))
+        .catch((err) => console.log(err));
+};
 
-module.exports.findOneSingleJoke = (req,res)=>{
-    Joke.findOne({_id:req.params.id})
-        .then(oneSingleJoke=>{
-            res.json({ joke: oneSingleJoke })
-        })
-        .catch((err)=>{
-            res.json({message: 'Something when wrong', error: err })
-        });
-}
+const findOneSingleJoke = (req,res)=>{
+    const {params} = req
+    Joke.findOne({_id: params.id})
+        .then((oneSingleJoke) => res.json(oneSingleJoke))
+        .catch((err)=> console.log(err));
+};
 
-module.exports.createNewJoke = (req, res) => {
-    Joke.create(req.body)
-        .then(newlyCreatedJoke => {
-            res.json({ joke: newlyCreatedJoke })
-        })
-        .catch((err) => {
-            res.json({ message: 'Something went wrong', error: err })
-        });
-}
+const createNewJoke = (req, res) => {
+    const { body } = req; // <== destructuring
+    Joke.create(body)
+        .then((newlyCreatedJoke) => res.json( newlyCreatedJoke))
+        .catch((err) => console.log( err ));
+};
 
-module.exports.updateExistingJoke = (req, res) => {
+const updateExistingJoke = (req, res) => {
     Joke.findOneAndUpdate(
         { _id: req.params.id },
         req.body,
         { new: true, runValidators: true }
     )
-        .then(updatedJoke => {
-            res.json({ user: updatedJoke })
-        })
-        .catch((err) => {
-            res.json({ message: 'Something went wrong', error: err })
-        });}
+        .then((updatedJoke) => res.json( updatedJoke ))
+        .catch((err) => console.log(err ));
+};
 
-module.exports.deleteAnExistingJoke = (req, res) => {
+const deleteAnExistingJoke = (req, res) => {
     Joke.deleteOne({ _id: req.params.id })
-        .then(result => {
-            res.json({ result: result })
-        })
-        .catch((err) => {
-            res.json({ message: 'Something went wrong', error: err })
-        });}
+        .then((result) => res.json(result ))
+        .catch((err) => console.log(err))
+};
+
+module.exports = {
+        getAllJokes,
+        findOneSingleJoke,
+        createNewJoke,
+        updateExistingJoke,
+        deleteAnExistingJoke,
+        };
