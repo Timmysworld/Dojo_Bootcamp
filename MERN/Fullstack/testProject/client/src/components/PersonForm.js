@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios' 
 
-const PersonForm = () => {
+const PersonForm = (props) => {
+    const {people,setPeople} = props; //destructing state to use as props from /views/main.js
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
@@ -14,15 +15,10 @@ const PersonForm = () => {
         .then(res=>{
             console.log(res);
             console.log(res.data)
+            setPeople([...people,res.data]); //update the lifted state of our people array to include current value in state plus the single new object created and returned from ojur post request.
         })
         .catch(err=>console.log(err))
     }
-    // const [message, setMessage] = useState("Loading....")
-    // useEffect (()=> {
-    //     axios.get("http://localhost:8000/api/")
-    //         .then(res=>setMessage(res.data.message))
-    //         .catch(err=>console.log(err))
-    // }, []);
         return(
             <form onSubmit={onSubmitHandler}>
             <p>
