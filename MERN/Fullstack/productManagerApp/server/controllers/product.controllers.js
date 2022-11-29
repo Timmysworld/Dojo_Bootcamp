@@ -12,6 +12,7 @@ const createProduct = (request, response) => {
             .catch(err =>response.json(err))
 };
 
+
 module.exports = {
     getProduct,
     createProduct
