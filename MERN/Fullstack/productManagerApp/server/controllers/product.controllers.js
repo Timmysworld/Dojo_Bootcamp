@@ -7,9 +7,12 @@ const getProduct = (req, res) => {
 };
 
 const createProduct = (request, response) => {
+    console.log("createBody")
+    console.log(request.body)
     Product.create(request.body)
             .then(product=>response.json(product))
-            .catch(err =>response.json(err))
+            .catch(err =>{console.log(err);
+                response.json(err)})
 };
 
 
