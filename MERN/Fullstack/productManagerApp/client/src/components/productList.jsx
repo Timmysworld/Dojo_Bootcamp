@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect } from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const ProductList = (props) => {
     const {products, setProducts} = props;
@@ -9,6 +9,7 @@ const ProductList = (props) => {
     useEffect(()=>{
         axios.get("http://localhost:8000/api/")
             .then((res)=>{
+                //res is an object
                 console.log(res.data);
                 setProducts(res.data);
             })
@@ -21,12 +22,13 @@ const ProductList = (props) => {
             <h1> All Products </h1>
             { 
             // console.log(product);
-                products.map((product,index)=>{
+            //map through the getter from props
+                products.map((product, index)=>{
                     // console.log(product)
                     return (
-                        <div key={index}>
-                            <p>{product.product}</p>
-                            {/* <Link to={`/product/${product._id}`}></Link> */}
+                        //make the key unique DO NOT USE INDEX 
+                        <div key={product.id}>
+                            <Link to={`/api/product/${product._id}`}>{product.product}</Link> 
                         </div>
                     )
                 })

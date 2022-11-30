@@ -8,7 +8,7 @@ const Details = (props) => {
     const {id} = useParams();
 
     useEffect(() =>{
-        axios.get("http://localhost:8000/api/" + id)
+        axios.get(`http://localhost:8000/api/product/${id}`)
             .then(res => {
                 console.log(res.data);
                 setProduct(res.data)
@@ -19,6 +19,8 @@ const Details = (props) => {
         <div>
             <h1> All Products</h1>
             <p>{product.product}</p>
+            <p> $ {product.price}</p>
+            <p>{product.description}</p>
         </div>
     )
 }

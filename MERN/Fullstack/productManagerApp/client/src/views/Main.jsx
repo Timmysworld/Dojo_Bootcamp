@@ -6,7 +6,7 @@ import ProductList from '../components/productList';
 const Main = (props) => {
     const [products, setProducts] = useState([]);
     return (
-        <div>
+        <div className='wrapper'>
             <ProductForm products={products} setProducts={setProducts}/> <hr/>
             <ProductList products={products} setProducts={setProducts}/>
         </div>
