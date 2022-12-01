@@ -31,7 +31,7 @@ const ProductForm = ({products,setProducts}) => {
             </div>
             <div className='form-fields'>
                 <label>Price</label><br/>
-                <input type="text" onChange = {(e)=>setPrice(e.target.value)}/>
+                <input type="number" onChange = {(e)=>setPrice(e.target.value)}/>
             </div>
             <div className='form-fields'>
                 <label>Description</label><br/>

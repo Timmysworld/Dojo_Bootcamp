@@ -4,8 +4,19 @@ import { useEffect } from 'react';
 import {Link} from 'react-router-dom';
 
 const ProductList = (props) => {
-    const {products, setProducts} = props;
+    const {products, setProducts, removeFromDom} = props;
 
+    const deleteProduct = (pid) => {
+        axios.delete('http://localhost:8000/api/product/' + pid)
+            .then(res=>{
+                console.log(res.data)
+                removeFromDom(pid)
+                // setProducts(res.data)
+            })
+            .catch(err=>console.log(err))
+    }
+
+    //Anytime you want to READ your list you want to use useEffect
     useEffect(()=>{
         axios.get("http://localhost:8000/api/")
             .then((res)=>{
@@ -17,6 +28,7 @@ const ProductList = (props) => {
                 console.log(err);
             });
     },[setProducts])
+
     return(
         <div>
             <h1> All Products </h1>
@@ -28,7 +40,17 @@ const ProductList = (props) => {
                     return (
                         //make the key unique DO NOT USE INDEX 
                         <div key={product.id}>
-                            <Link to={`/api/product/${product._id}`}>{product.product}</Link> 
+                            <Link to={`/api/product/${product._id}`}>
+                                {product.product}
+                            </Link> 
+                                |
+                            <Link to={'/api/product/edit/' + product._id}>
+                                Edit
+                            </Link>   
+                                |
+                            <button onClick={(e)=>{deleteProduct(product._id)}}>
+                            Delete
+                            </button>
                         </div>
                     )
                 })
@@ -39,3 +61,4 @@ const ProductList = (props) => {
 }
 
 export default ProductList
+
