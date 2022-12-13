@@ -9,26 +9,30 @@ const getAuthors = (req, res) => {
 const createAuthors = (request, response) => {
     Authors.create(request.body)
         .then(authors=>response.json(authors))
-        .catch(err => {console.log(err);
-            response.json(err)})
+        .catch(err => response.status(400).json({ message: "Oh no! Something went wrong!", error: err }));
+        // .catch(err => {console.log(err);
+        //     response.json(err)})
 };
 
 const getOneAuthor = (request, response) => {
     Authors.findOne({_id:request.params.id})
         .then(author=>response.json(author))
-        .catch(err=> response.json(err));
+        .catch(err => response.status(400).json({ message: "Oh no! Something went wrong!", error: err }));
+        //.catch(err=> response.json(err));
 }
 
 const updateAuthor = (request, response) => {
     Authors.findOneAndUpdate({_id:request.params.id},request.body, {new:true})
         .then(author=>response.json(author))
-        .catch(err=>response.json(err));
+        .catch(err => response.status(400).json({ message: "Oh no! Something went wrong!", error: err }));
+        //.catch(err=>response.json(err));
 };
 
 const deleteAuthor = (request, response)=> {
     Authors.deleteOne({_id:request.params.id})
         .then(deleteConfirmation => response.json(deleteConfirmation))
-        .catch(err => response.json(err))
+        .catch(err => response.status(400).json({ message: "Oh no! Something went wrong!", error: err }));
+        //.catch(err => response.json(err))
 }
 
 
