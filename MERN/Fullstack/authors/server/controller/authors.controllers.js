@@ -3,7 +3,8 @@ const Authors = require('../models/authors.model');
 const getAuthors = (req, res) => {
     Authors.find()
         .then((allAuthors)=>res.json(allAuthors))
-        .catch((err)=>console.log(err))
+        .catch(err => response.status(400).json({ message: "Oh no! Something went wrong!", error: err }));
+        //.catch((err)=>console.log(err))
 };
 
 const createAuthors = (request, response) => {
@@ -22,7 +23,7 @@ const getOneAuthor = (request, response) => {
 }
 
 const updateAuthor = (request, response) => {
-    Authors.findOneAndUpdate({_id:request.params.id},request.body, {new:true})
+    Authors.findOneAndUpdate({_id:request.params.id},request.body, {new:true,runValidators:true})
         .then(author=>response.json(author))
         .catch(err => response.status(400).json({ message: "Oh no! Something went wrong!", error: err }));
         //.catch(err=>response.json(err));

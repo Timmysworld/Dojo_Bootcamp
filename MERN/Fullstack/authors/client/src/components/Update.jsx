@@ -5,7 +5,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 const Update = (props) => {
     const {id} = useParams();
 
-    const [name,setName] = useState();
+    const [name,setName] = useState("");
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
@@ -15,7 +15,11 @@ const Update = (props) => {
                 console.log(res.data)
                 setName(res.data.name);
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err.response)
+                console.log(err)
+                setErrors(err.response.data.error.errors)
+            });
     }, [id, setName])
 
     const updateOneAuthor = (e)=>{
@@ -43,14 +47,13 @@ const Update = (props) => {
                 <div>
                     <label>Name:</label><br/>
                     {errors.name ?
-                    <p style={{color:"red"}}>{errors.name.message}</p>
-                    : null}
+                        <p style={{color:"red"}}>{errors.name.message}</p>
+                        : null}
                     <input type="text"
                     name="name"
                     value={name}
-                    onChange ={(e)=>{
-                        setName(e.target.value)
-                    }}/>
+                    onChange={(e)=>setName(e.target.value)}
+                    />
                 </div>
                 <input type="submit" />
             </form>

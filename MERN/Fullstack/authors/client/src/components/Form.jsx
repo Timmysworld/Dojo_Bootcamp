@@ -24,17 +24,7 @@ const Form = () => {
             console.log(err.response.data.error.errors);
             setErrors(err.response.data.error.errors);
         });
-        // .catch(err=>{
-        //     const errorResponse = err.response.data.errors; // Get the errors from err.response.data
-        //     console.log(err)
-        //     const errorArr = []; // Define a temp error array to push the messages in
-        //     for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
-        //         errorArr.push(errorResponse[key].message)
-        //     }
-        //     // Set Errors
-        //     setErrors(errorArr);
-        // })            
-        // .catch(err=>console.log(err))
+
     }
     return (
         <div>
@@ -78,3 +68,14 @@ export default Form
 //     console.log(err);
 // })
 // }
+        // .catch(err=>{
+        //     const errorResponse = err.response.data.errors; // Get the errors from err.response.data
+        //     console.log(err)
+        //     const errorArr = []; // Define a temp error array to push the messages in
+        //     for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
+        //         errorArr.push(errorResponse[key].message)
+        //     }
+        //     // Set Errors
+        //     setErrors(errorArr);
+        // })            
+        // .catch(err=>console.log(err))
