@@ -21,7 +21,7 @@ const getOneAuthor = (request, response) => {
 
 const updateAuthor = (request, response) => {
     Authors.findOneAndUpdate({_id:request.params.id},request.body, {new:true})
-        .then(updateAuthor=>response.json(updateAuthor))
+        .then(author=>response.json(author))
         .catch(err=>response.json(err));
 };
 

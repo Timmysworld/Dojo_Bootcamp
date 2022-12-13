@@ -2,7 +2,7 @@
 const AuthorsController = require('../controller/authors.controllers');
 
 module.exports = app  => {
-    app.get('/api',AuthorsController.getAuthors);
+    app.get('/api/all',AuthorsController.getAuthors);
 
     //CREATE 
     app.post('/api/author',AuthorsController.createAuthors);
