@@ -13,6 +13,7 @@ function App() {
       <h1>Favorite Authors</h1>
       <Routes>
         <Route path='/' element={<Dashboard name={name} setName={setName}/>}/>
+        
         <Route path='/new' element={<Form/>}/>
         <Route path='/edit/:id' element={<Update authorName={authorName} setAuthorName={setAuthorName}/>}/>
       </Routes>
