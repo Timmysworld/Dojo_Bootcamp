@@ -1,0 +1,7 @@
+I. Compile Java code
+
+    -- javac filename.java example( javac Test.java)
+
+II. RUN Java code
+
+    -- java filename example( java Test )
