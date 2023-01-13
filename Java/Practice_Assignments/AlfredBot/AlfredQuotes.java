@@ -1,4 +1,5 @@
 // package Java.Practice_Assignments.AlfredBot;
+
 import java.util.Date;
 
 public class AlfredQuotes {
@@ -45,10 +46,7 @@ public class AlfredQuotes {
         return "I am " + age;
         
     }
-	// NINJA BONUS
-	// See the specs to overload the guessGreeting method
-    // SENSEI BONUS
-    // Write your own AlfredQuote method using any of the String methods you have learned!
+
     
 }
 
