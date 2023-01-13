@@ -1,5 +1,5 @@
-package Java.Practice_Assignments.CafeJava;
-// package Java.Assignments.CafeJava;
+//package Java.Practice_Assignments.CafeJava;
+
 
 public class CafeJava {
     public static void main(String[] args){
