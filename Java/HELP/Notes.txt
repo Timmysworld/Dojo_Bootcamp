@@ -11,3 +11,24 @@ There are a few things to double check each time you create a .java file.
 
 3. Every time you make a change to your code, you will need to re-compile it.
 
+CASTING  
+    1. Explicit Casting - Explicit casting is when we declare the type that we want to convert to in our source code. 
+
+    2. Implicit Casting  -  Depending on the context, Java will implicitly cast types for us. 
+
+PRIMITIVE VS OBJECTIVE -- when should we use each and why?
+
+    1.Performance: Object types are an instance of a class. They usually hold data and methods. Therefore, their memory capacity is much bigger than their primitive counterpart. Let's look at an example:
+
+    2.null values: Primitive data types can only hold data. However, Object types are pointers to where the data is stored. This means that this pointer can point to nothing (null), while primitive types cannot.
+
+ARRAYS 
+    1. int[] myArray = {4, 8, 8, 5, 9}; 
+        int[] myArray = new int[5] <- initialize
+
+        A. to initialize a hard-coded basic array, you use curly braces instead of square brackets.
+
+        B. FIXED ARRAY = Fixed Size you will not be able to push or pop from that array.
+
+        C. [I@6bc7c054 = it's actually the default string representation of the array. The [I means it's an array of type int and @6bc7c054 is the address at which the array is stored. 
+
