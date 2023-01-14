@@ -31,4 +31,22 @@ ARRAYS
         B. FIXED ARRAY = Fixed Size you will not be able to push or pop from that array.
 
         C. [I@6bc7c054 = it's actually the default string representation of the array. The [I means it's an array of type int and @6bc7c054 is the address at which the array is stored. 
-
+HASHMAP
+    1. Iterating over a HashMap
+        a. a typical way to loop over a HashMap is by first producing a set of the map's keys using the keySet() method of the HashMap class. A Set is similar to a HashMap, however, instead of key-value pairs, it has only values. But Set values are unique values.
+        b. Sets can be iterated over with an enhanced for loop, so if you have the set of keys from your HashMap, you can access the values in your map using each key as you iterate.
+        c. a Set is what we call an interface. 
+            c1. an interface is an " any " type
+        d. DEFINITION: a Set is a collection that contains no duplicates,
+        e. You can do a quite a bit more with HashMaps. 
+            e1. Some of the most common used methods are:
+                - clear, 
+                - containsKey, 
+                - containsValue,
+                - isEmpty, 
+                - keySet, 
+                - remove, 
+                - replace, 
+                - size, 
+                -values. 
+        
