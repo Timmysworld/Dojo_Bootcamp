@@ -65,4 +65,7 @@ public class CafeJava {
         System.out.println(displayTotalMessage + (latte - dripCoffee));
 
     }
+
 }
+
+
