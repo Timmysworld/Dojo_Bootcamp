@@ -49,4 +49,13 @@ HASHMAP
                 - replace, 
                 - size, 
                 -values. 
-        
+
+MEMBER VARIABLES 
+    1. In Java, attributes are referred to as member variables or fields. There are three types of variables in Java, and it is important to differentiate the different types of variables that can be in a Java class:
+
+        A. Member variables - object attributes or fields that belong to a data type or class.
+            A1. Note: You will see member variables called members, attributes, instance variables, fields, and properties. These all refer to the same thing, but in Java they are typically referred to as member variables.
+
+        B. Local variables - variables within methods code blocks that are not member variables (these are the primary type of variable you have been using so far). You can think of them as more temporary, since they vanish when the method ends (goes out of scope or returns).
+
+        C. Parameter variables - those that are declared in your method signature (between the parentheses!) which are also temporary.
