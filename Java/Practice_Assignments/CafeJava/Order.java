@@ -6,5 +6,4 @@ public class Order {
     public boolean ready;
     public ArrayList<Item> items = new ArrayList<Item>();
 
-    
 }
