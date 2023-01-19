@@ -59,3 +59,51 @@ MEMBER VARIABLES
         B. Local variables - variables within methods code blocks that are not member variables (these are the primary type of variable you have been using so far). You can think of them as more temporary, since they vanish when the method ends (goes out of scope or returns).
 
         C. Parameter variables - those that are declared in your method signature (between the parentheses!) which are also temporary.
+        
+OBJECTS AND CLASSES
+    1. An Object is a collection of behaviors and properties that all revolve around the same concept; this collection of behaviors and properties are called instance members. 
+
+CONSTRUCTORS 
+    1. A constructor method is a special function that gets called when an instance of an object is created. The differences between a constructor method and the other methods are:
+            -It doesn't have a return type.                 
+            -The name of the constructor MUST be the same as the name of the class to which it belongs.                 
+            -A constructor is called automatically when a new instance of an object is created.
+
+    2. Constructor methods are used to execute some block of code on object instantiation.
+
+THIS 
+    1. Java, the this keyword refers to the current object within the context of an instance method or constructor. 
+    2. You can refer to this in any method of your class. There is one case in which you MUST use this: if one of your parameter variables shares the same name as one of your member variables. 
+
+METHODS 
+    1. A method is just a function that belongs to a class.
+
+    2.A method can do things like print, get, set, or delete information, or anything else you can think of. We name methods after verbs, like 'getHeight' or 'setSpeed' or 'isValid'.
+
+    3.the most important concepts relating to OOP is that objects only share certain aspects about themselves publicly. The idea is that we can create objects with public methods that deal with how to interact with the object, but we keep all the details about the logic we are performing inside those functions private. 
+
+    4.Every method has the following parts: 
+        A. modifiers 
+            - private: Only the class in which it is declared can see and access the method. This is the most restrictive access level.
+            - protected: Protected access gives subclasses a chance to use the method, while preventing a nonrelated class from trying to use it.
+            -public: Every class everywhere has access to the method.
+
+        B. return type 
+            -String is a return type that is used to declare that a method returns a String type. Other return types are the data type of whatever your method returns:
+                - int, 
+                - String, 
+                - double, 
+                - boolean, 
+                - void. 
+            In Java, you must specify what data type your method will return; otherwise, it will result in an error.
+
+        C. method name 
+            If the method returns 
+                a boolean, the convention is to ask a question in the name; that way, the names are read like they would have a question mark at the end. Is the collection empty? Is the user logged in? Does this element have items?We use lowerCamelCase for method names. 
+
+                For non-boolean methods we will use either verbs or get and set for property values, e.g.:getValue(); setValue(); greet(); addToList(); createGreeting();
+
+        D. method body
+            The method body defines the instructions that are to be executed when the method is called. It is all the code between the curly braces, { }.
+        
+        
