@@ -105,5 +105,7 @@ METHODS
 
         D. method body
             The method body defines the instructions that are to be executed when the method is called. It is all the code between the curly braces, { }.
-        
+
+FOUR PILLARS OF OOP  
+         
         
