@@ -107,5 +107,56 @@ METHODS
             The method body defines the instructions that are to be executed when the method is called. It is all the code between the curly braces, { }.
 
 FOUR PILLARS OF OOP  
-         
-        
+
+INTERFACE 
+    an interface is not a class, and while writing an interface is similar to writing a class, they are two different constructs.
+    An interface states behaviors that a class must implement.
+
+    There are 3 types of interface methods: default, static and abstract.
+
+        1.default methods allow developers to create default methods that do not need implementation.
+
+        2.Static methods are interface member methods. They are implemented on the interface level and are called on the interface, not the class. Therefore, you cannot override static interface methods. You can only call them directly on the interface that they were declared.
+
+        3.Abstract methods are methods that are declared without implementation. We saw an example of that in the examples above.
+    
+    Interface VS CLASS 
+
+            An interface is similar to a class in the following ways:
+
+            -An interface can contain any number of methods.
+            -An interface is written in a file with a .java extension, with the name of the interface matching the name of the file.
+            -The bytecode of an interface appears in a .class file.
+            -Interfaces appear in packages, and their corresponding bytecode file must be in a directory structure that matches the package name.
+
+        However, an interface is different from a class in several ways, including:
+
+            -You cannot instantiate an interface.
+            -An interface does not contain any constructors.
+            -The only fields that can appear in an interface must be both static and final, that is, constants that cannot change.
+            -An interface is not extended by a class; it is implemented by a class.
+            -An interface can extend multiple interfaces; a class can only extend from one class, but it can implement multiple interfaces
+
+ABSTRACT VS INTERFACE 
+    When to use them: 
+        Consider using abstract classes if any of these statements apply to your situation:
+
+        1. You want to share code among several closely related classes.
+
+        2. You expect that classes that extend your abstract class have many common methods or fields, or require  access modifiers other than public (such as protected and private).
+
+        3. You want to declare non-static or non-final fields. This enables you to define methods that can access    and modify the state of the object to which they belong.
+
+     Consider using interfaces if any of these statements apply to your situation:
+
+        4. You expect that unrelated classes would implement your interface. For example, the interfaces Comparable and Cloneable are implemented by many unrelated classes.
+
+        5. You want to specify the behavior of a particular data type, but aren't concerned about who implements its behavior.
+
+        6. You want to take advantage of multiple inheritances of type.      
+           
+JavaBeans are POJOs that conform to a series of rules:
+
+Member variables must be private, but accessible using get and set
+Must have a zero-argument constructor
+Must implement the serializable interface
