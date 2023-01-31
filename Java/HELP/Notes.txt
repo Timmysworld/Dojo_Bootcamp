@@ -160,3 +160,18 @@ JavaBeans are POJOs that conform to a series of rules:
 Member variables must be private, but accessible using get and set
 Must have a zero-argument constructor
 Must implement the serializable interface
+
+JAVA PACKAGE 
+    NEW SPRING PROJECT
+    common naming convention: 
+    com.<company name> . <project name>
+    artifat name is the same as project name 
+    package is the same as group name 
+
+    2.7.8 spring boot version => 2.7.7(pom.xml)
+
+ANNOTATIONS:
+
+    @RestController annotation: A convenient annotation that allows our controller to respond with data (i.e., Strings, JSON)
+    
+    @RequestMapping annotation: Annotation for mapping web requests onto specific handler classes (class level) and/or handler methods (method level). Currently in our code, we are using a method level annotation. Meaning that public String home() method will handle any request that comes to the "/" path. We can also annotate the whole class so that all methods respond to a certain path. For example: Now, the "/hello" route will respond with "Hello World!" and the "/hello/world" route will respond with "Class level annotations are cool too!"
