@@ -173,5 +173,16 @@ JAVA PACKAGE
 ANNOTATIONS:
 
     @RestController annotation: A convenient annotation that allows our controller to respond with data (i.e., Strings, JSON)
-    
+
     @RequestMapping annotation: Annotation for mapping web requests onto specific handler classes (class level) and/or handler methods (method level). Currently in our code, we are using a method level annotation. Meaning that public String home() method will handle any request that comes to the "/" path. We can also annotate the whole class so that all methods respond to a certain path. For example: Now, the "/hello" route will respond with "Hello World!" and the "/hello/world" route will respond with "Class level annotations are cool too!"
+
+DOMAIN MODEL:
+
+    The domain model is simply a Java Bean that represents our "business data," or the information that we want about a particular thing.
+
+REPOSITORIES:
+    To quote Eric Evans of Domain Driven Design: "A Repository represents all objects of a certain type as a conceptual set. It acts like a collection, except with more elaborate querying capability."
+
+    RestController 
+        RequestMapping plays well with api 
+        use whenever getting information and not displaying to html.
