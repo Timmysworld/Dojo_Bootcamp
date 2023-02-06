@@ -161,6 +161,8 @@ Member variables must be private, but accessible using get and set
 Must have a zero-argument constructor
 Must implement the serializable interface
 
+Bean java class that have several requirements
+
 JAVA PACKAGE 
     NEW SPRING PROJECT
     common naming convention: 
