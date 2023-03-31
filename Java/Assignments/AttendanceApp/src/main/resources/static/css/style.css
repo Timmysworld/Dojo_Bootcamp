@@ -1,0 +1,89 @@
+*, :after, :before{
+	box-sizing:border-box;
+}
+
+.wrapper{
+	align-items:stretch;
+	display:flex;
+	width:100%;
+}
+
+.navbar-brand, .nav-link{
+	color: white;
+}
+.navbar-nav{
+	margin-left: 775px!important;
+}
+
+.sidebar{
+	direction: 1tr;
+	max-width:195px;
+	min-width:195px;
+	transition:margin-left .35s ease-in-out,left .35s ease-in-out,margin-right .35s ease-in-out,right .35s ease-in-out;
+	
+}
+.sidebar-content{
+	height:100vh;
+	left:0;
+	position:sticky;
+	top:0;
+}
+/* .main-content{
+	position:absolute;
+	top: 10%;
+	left: 20%;
+	width: fit-content;
+} */
+.main{
+	display:flex;
+	flex-direction:column;
+	min-height:100vh;
+	min-width:0;
+	transition:margin-left .35s ease-in-out,left .35s ease-in-out,margin-right .35s ease-in-out,right .35s ease-in-out;
+	width:100%;
+}
+.content{
+	direction: 1tr;
+	flex:1;
+	padding:2.5rem 2.5rem 1.5rem;
+}
+
+
+
+header.head {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - -12.5rem);
+  background: linear-gradient(to bottom,  rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+header.head h1, header.head .h1 {
+  font-size: 3.25rem;
+}
+
+.text{
+	color: white;
+}
+.card-text{
+	font-size:1.03rem;
+	color:black;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+
+.login_section{
+	height: 100vh;
+}
+
+.img-fluid{
+	height:100%;
+}
